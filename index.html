@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title></title>
+	<title>Scale It!</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -22,6 +22,7 @@
 	</style>
 	<link rel="stylesheet" href="_css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="_css/screen.css">
+  <link rel="stylesheet" href="_css/iosList.css">
 
 	<script src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
@@ -34,12 +35,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="#">Scale It!</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="#diameter">Diameter</a></li>
+              <li><a href="#length">Length</a></li>
+              <li><a href="#width">Width</a></li>
+              <li><a href="#height">Height</a></li>
+              <li><a href="#area">Area</a></li>
+              <li><a href="#volume">Volume</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -49,14 +53,14 @@
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
+      <!-- <div class="hero-unit">
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
+      </div> -->
 
       <!-- Example row of columns -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="span4">
           <h2>Heading</h2>
            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -74,8 +78,100 @@
         </div>
       </div>
 
-      <hr>
+      <hr> -->
+      <!-- <header>
+        <h1>Scale it!</h1>
+        <ul id="selectDimension">
+          <li><a href="#">Diameter</a></li>
+          <li>Length</li>
+          <li>Width</li>
+          <li>Height</li>
+          <li>Area</li>
+          <li>Volume</li>
+        </ul>
+      </header> -->
 
+      <div class="row">
+        <div class="span12">
+          <div id ="leftList">
+            <div id="list1" class="listContainer">
+              <dl>
+                <dt>Teacher Objects</dt>
+                <dd id="dd1">Earth</dd>
+                <dd id="dd2">Soccer</dd>
+                <dd id="dd3">Earth</dd>
+                <dd id="dd4">Soccer</dd>
+                <dd id="dd5">Earth</dd>
+                <dd id="dd6">Soccer</dd>
+                <dd id="dd7">Earth</dd>
+                <dd id="dd8">Soccer</dd>
+                <dd id="dd9">Earth</dd>
+                <dd id="dd10">Soccer</dd>
+                <dd id="dd11">Earth</dd>
+                <dd id="dd12">Soccer</dd>
+                <dd id="dd13">Earth</dd>
+                <dd id="dd14">Soccer</dd>
+              </dl>
+              <dl>
+                <dt>Michael Objects</dt>
+                <dd id="dd15">Baseball</dd>
+                <dd id="dd16">Laptop</dd>
+                <dd id="dd17">Baseball</dd>
+                <dd id="dd18">Laptop</dd>
+                <dd id="dd19">Baseball</dd>
+                <dd id="dd20">Laptop</dd>
+                <dd id="dd21">Baseball</dd>
+                <dd id="dd22">Laptop</dd>
+                <dd id="dd23">Baseball</dd>
+                <dd id="dd24">Laptop</dd>
+                <dd id="dd25">Baseball</dd>
+                <dd id="dd26">Laptop</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div id="rightList">
+            <div id="list2" class="listContainer">
+              <dl>
+                <dt>Teacher Objects</dt>
+                <dd id="dd27">Earth</dd>
+                <dd id="dd28">Soccer</dd>
+                <dd id="dd29">Earth</dd>
+                <dd id="dd30">Soccer</dd>
+                <dd id="dd31">Earth</dd>
+                <dd id="dd32">Soccer</dd>
+                <dd id="dd33">Earth</dd>
+                <dd id="dd34">Soccer</dd>
+                <dd id="dd35">Earth</dd>
+                <dd id="dd36">Soccer</dd>
+                <dd id="dd37">Earth</dd>
+                <dd id="dd38">Soccer</dd>
+                <dd id="dd39">Earth</dd>
+                <dd id="dd40">Soccer</dd>
+              </dl>
+              <dl>
+                <dt>Michael Objects</dt>
+                <dd id="dd41">Baseball</dd>
+                <dd id="dd42">Laptop</dd>
+                <dd id="dd43">Baseball</dd>
+                <dd id="dd44">Laptop</dd>
+                <dd id="dd45">Baseball</dd>
+                <dd id="dd46">Laptop</dd>
+                <dd id="dd47">Baseball</dd>
+                <dd id="dd48">Laptop</dd>
+                <dd id="dd49">Baseball</dd>
+                <dd id="dd50">Laptop</dd>
+                <dd id="dd51">Baseball</dd>
+                <dd id="dd52">Laptop</dd>
+              </dl>
+            </div>
+          </div>
+
+          <!-- <img id="earth" src="_img/objects/Earth_Sphere.png" />
+          <img id="soccer" src="_img/objects/soccer.jpg" /> -->
+          <!-- <p>Main Content</p> -->
+        </div>
+      </div>
       <footer>
         <p>&copy; Company 2012</p>
       </footer>
@@ -85,6 +181,7 @@
 <script>window.jQuery || document.write('<script src="_js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
 <script src="_js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="_js/libs/jquery.ioslist-1.0.1.min.js"></script>
 
 <script src="_js/script.js"></script>
 </body>

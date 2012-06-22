@@ -1,0 +1,25 @@
+{
+	"objects" : {
+		"earth" : {
+			"img_width" : "250",	
+			"img_height" : "250",	
+			"diameter" : "12713600", 	
+			"length" : "",	
+			"width" : "",	
+			"height" : "",	
+			"area" : "510072000000",	
+			"volume" : "1.08321e12"	
+		},
+		
+		"soccer" : {
+			"img_width" : "227",	
+			"img_height" : "222",	
+			"diameter" : "0.22281692", 	
+			"length" : "",	
+			"width" : "",	
+			"height" : "",	
+			"area" : "1.5393804",	
+			"volume" : "0.17959438"	
+		}
+	}
+}

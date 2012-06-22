@@ -4,15 +4,41 @@
    Author:
    ========================================================================== */
 
+ul#selectDimension {
+	list-style-type: none;
+}
 
+#selectDimension li {
+	float: left;
+	margin: 0 10px 0 10px;
+}
 
+#leftList {
+	float: left;
+}
 
+#rightList {
+	float: right;
+}
 
+.listWrapper {
+	height: 500px !important;
+	margin: 0 !important;
+	border: 1px solid black;
+}
 
+footer {
+	margin-top: 50px;
+}
 
+dd.selectedObject {
+	background-color: #600;
+	color: #fff;
+}
 
-
-
-
-
-
+dd:hover {
+	background-color: #f60;
+}
+dd.selectedObject:hover {
+	background-color: #600;
+}
