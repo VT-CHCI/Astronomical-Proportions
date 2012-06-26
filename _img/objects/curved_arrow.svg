@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="744.09448819" height="1052.3622047" id="svg2" version="1.1" inkscape:version="0.48.1 r9760" inkscape:export-filename="/Users/giacomobencista/Desktop/visita.png" inkscape:export-xdpi="300" inkscape:export-ydpi="300" sodipodi:docname="curved_arrow.svg">
+  <defs id="defs4">
+    <linearGradient id="linearGradient4140">
+      <stop style="stop-color:#ee0000;stop-opacity:1;" offset="0" id="stop4142"/>
+      <stop style="stop-color:#9a0000;stop-opacity:1;" offset="1" id="stop4144"/>
+    </linearGradient>
+    <filter id="filter3131" inkscape:label="Drop shadow" width="1.5" height="1.5" x="-.25" y="-.25">
+      <feGaussianBlur id="feGaussianBlur3133" in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feColorMatrix id="feColorMatrix3135" result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 "/>
+      <feOffset id="feOffset3137" in="bluralpha" dx="4" dy="4" result="offsetBlur"/>
+      <feMerge id="feMerge3139">
+        <feMergeNode id="feMergeNode3141" in="offsetBlur"/>
+        <feMergeNode id="feMergeNode3143" in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="filter3145" inkscape:label="Drop shadow" width="1.5" height="1.5" x="-.25" y="-.25">
+      <feGaussianBlur id="feGaussianBlur3147" in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feColorMatrix id="feColorMatrix3149" result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 "/>
+      <feOffset id="feOffset3151" in="bluralpha" dx="4" dy="4" result="offsetBlur"/>
+      <feMerge id="feMerge3153">
+        <feMergeNode id="feMergeNode3155" in="offsetBlur"/>
+        <feMergeNode id="feMergeNode3157" in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="filter3953" inkscape:label="Drop shadow" width="1.5" height="1.5" x="-.25" y="-.25">
+      <feGaussianBlur id="feGaussianBlur3955" in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feColorMatrix id="feColorMatrix3957" result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0 "/>
+      <feOffset id="feOffset3959" in="bluralpha" dx="4" dy="4" result="offsetBlur"/>
+      <feMerge id="feMerge3961">
+        <feMergeNode id="feMergeNode3963" in="offsetBlur"/>
+        <feMergeNode id="feMergeNode3965" in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="filter3969" inkscape:label="Blotting paper" inkscape:menu="Textures" inkscape:menu-tooltip="Inkblot on blotting paper" height="1.3" y="-0.15" width="1.3" x="-0.15" color-interpolation-filters="sRGB">
+      <feGaussianBlur id="feGaussianBlur3971" stdDeviation="3" in="SourceGraphic" result="result1"/>
+      <feTurbulence id="feTurbulence3973" type="turbulence" baseFrequency="0.05" numOctaves="5" result="result0"/>
+      <feDisplacementMap id="feDisplacementMap3975" in2="result0" in="result1" xChannelSelector="R" yChannelSelector="G" scale="3" result="result2"/>
+      <feBlend id="feBlend3977" in2="result2" result="result5" in="result2" mode="multiply"/>
+      <feGaussianBlur id="feGaussianBlur3979" stdDeviation="5" in="result2" result="result4"/>
+      <feComposite id="feComposite3981" in2="result5" operator="arithmetic" in="result4" k2="0.25" k3="1" k1="1" result="result6"/>
+      <feComposite id="feComposite3983" in2="result2" operator="in"/>
+    </filter>
+    <filter id="filter3987" y="-0.15" height="1.3" x="-0.15" width="1.3" inkscape:menu-tooltip="Aquarelle paper effect which can be used for pictures as for objects" inkscape:menu="Textures" inkscape:label="Rough paper" color-interpolation-filters="sRGB">
+      <feTurbulence id="feTurbulence3989" type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="0" result="result4"/>
+      <feDisplacementMap id="feDisplacementMap3991" in2="result4" in="SourceGraphic" yChannelSelector="G" xChannelSelector="R" scale="10" result="result3"/>
+      <feDiffuseLighting id="feDiffuseLighting3993" lighting-color="rgb(233,230,215)" diffuseConstant="1" surfaceScale="2" result="result1" in="result4">
+        <feDistantLight id="feDistantLight3995" azimuth="235" elevation="40"/>
+      </feDiffuseLighting>
+      <feComposite id="feComposite3997" in2="result1" operator="in" in="result3" result="result2"/>
+      <feComposite id="feComposite3999" in2="result1" result="result5" operator="arithmetic" k1="1.7"/>
+      <feBlend id="feBlend4001" in2="result3" in="result5" mode="normal"/>
+    </filter>
+    <filter id="filter4062" inkscape:label="Drop shadow" width="1.5" height="1.5" x="-.25" y="-.25">
+      <feGaussianBlur id="feGaussianBlur4064" in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feColorMatrix id="feColorMatrix4066" result="bluralpha" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.6 0 "/>
+      <feOffset id="feOffset4068" in="bluralpha" dx="8" dy="8" result="offsetBlur"/>
+      <feMerge id="feMerge4070">
+        <feMergeNode id="feMergeNode4072" in="offsetBlur"/>
+        <feMergeNode id="feMergeNode4074" in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient inkscape:collect="always" xlink:href="#linearGradient4140" id="linearGradient4146" x1="114.57439" y1="111.32899" x2="504.36639" y2="671.45343" gradientUnits="userSpaceOnUse"/>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.89444413" inkscape:cx="239.58942" inkscape:cy="651.68264" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="2560" inkscape:window-height="1392" inkscape:window-x="1440" inkscape:window-y="0" inkscape:window-maximized="1" showguides="true" inkscape:guide-bbox="true"/>
+  <metadata id="metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+    <rect style="fill:#ffffff;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.99999994000000003;stroke-opacity:1" id="rect4076" width="1151.5531" height="1053.168" x="-209.06839" y="-131.61339"/>
+    <path style="fill:url(#linearGradient4146);fill-opacity:1;stroke:none" d="M 116.06349,72.461763 C 101.0944,155.56602 36.313494,332.05552 36.313494,332.05552 c 28.13438,-30.69205 58.188638,-45.16413 78.343746,-51.90625 12.44207,135.13906 157.71549,448.72018 428.25,462.59375 -97.36499,-82.89874 20.46883,-90.33758 164.9375,-88.4375 -240.44456,-13.54618 -508.43374,-138.13556 -548.8125,-377.5 19.68677,3.33558 52.09034,11.48229 91.5,31.625 0,0 -120.53201,-156.9939 -134.46875,-235.968757 z" id="path3933" inkscape:connector-curvature="0" sodipodi:nodetypes="cccccccc"/>
+  </g>
+</svg>
