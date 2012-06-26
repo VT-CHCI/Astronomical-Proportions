@@ -13,22 +13,35 @@ ul#selectDimension {
 	margin: 0 10px 0 10px;
 }
 
-#leftList {
+.left {
 	float: left;
+	
 }
 
-#rightList {
+.right {
 	float: right;
 }
 
 .listWrapper {
-	height: 500px !important;
-	margin: 0 !important;
+	height: 500px ! important;
+	margin: 0 ! important;
+	margin-top:	40px;
 	border: 1px solid black;
+	width: 450px ! important;
+	height:	600px ! important;
 }
 
 footer {
 	margin-top: 50px;
+}
+
+.listContainer dd {
+	height: 255px;
+	padding: 5px;
+}
+
+.listContainer dd p {
+	float: left;
 }
 
 dd.selectedObject {
@@ -41,4 +54,28 @@ dd:hover {
 }
 dd.selectedObject:hover {
 	background-color: #600;
+}
+
+.fakeHeader, dt {
+	width: 423px ! important;
+}
+
+.hidden {
+	display: hidden;
+}
+
+#leftObject {
+	display: inline;
+}
+
+#rightObject {
+	display: inline;
+}
+
+.iosListImage {
+	float:	right;
+}
+
+#animateObjects {
+	height: 450px;
 }
