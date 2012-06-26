@@ -27,125 +27,61 @@
 	<script src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Scale It!</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#diameter">Diameter</a></li>
-              <li><a href="#length">Length</a></li>
-              <li><a href="#width">Width</a></li>
-              <li><a href="#height">Height</a></li>
-              <li><a href="#area">Area</a></li>
-              <li><a href="#volume">Volume</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Scale It!</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#diameter">Diameter</a></li>
+            <li><a href="#length">Length</a></li>
+            <li><a href="#width">Width</a></li>
+            <li><a href="#height">Height</a></li>
+            <li><a href="#area">Area</a></li>
+            <li><a href="#volume">Volume</a></li>
+          </ul>
+        </div> <!--/.nav-collapse -->
+      </div> <!-- /.container -->
+    </div> <!-- /.navbar-inner -->
+  </div> <!-- /.navbar-fixed-top -->
+
+  <div class="container">
+    <div class="row">
+      <div id="chooseObjects" class="span12">
+        <div class ="left">
+          <div id="list1" class="listContainer">
+          </div>
+        </div>
+
+        <div class="right">
+          <div id="list2" class="listContainer">
+          </div>
+        </div>
+      </div>
+      <div id="animateObjects" class="span12">
+        <div id="description"><p id="verboseDescription"></p></div>
+        <div id="leftObject" class="left">
+        </div>
+        <div id="rightObject" class="right">
         </div>
       </div>
     </div>
+    <footer>
+      <p>&copy; Company 2012</p>
+    </footer>
 
-    <div class="container">
-      <div class="row">
-        <div id="chooseObjects" class="span12">
-          <div class ="left">
-            <div id="list1" class="listContainer">
-              <!-- <dl> -->
-                <!-- <dt>Teacher Objects</dt>
-                <dd id="dd1">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd2">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd3">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd4">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd5">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd6">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd7">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd8">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd9">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd10">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd11">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd12">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd13">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd14">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-              </dl>
-              <dl>
-                <dt>Michael Objects</dt>
-                <dd id="dd15">Baseball</dd>
-                <dd id="dd16">Laptop</dd>
-                <dd id="dd17">Baseball</dd>
-                <dd id="dd18">Laptop</dd>
-                <dd id="dd19">Baseball</dd>
-                <dd id="dd20">Laptop</dd>
-                <dd id="dd21">Baseball</dd>
-                <dd id="dd22">Laptop</dd>
-                <dd id="dd23">Baseball</dd>
-                <dd id="dd24">Laptop</dd>
-                <dd id="dd25">Baseball</dd>
-                <dd id="dd26">Laptop</dd> -->
-              <!-- </dl> -->
-            </div>
-          </div>
+  </div> <!-- /container -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="_js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-          <div class="right">
-            <div id="list2" class="listContainer">
-              <!-- <dl>
-                <dt>Teacher Objects</dt>
-                <dd id="dd27">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd28">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd29">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd30">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd31">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd32">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd33">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd34">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd35">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd36">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd37">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd38">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-                <dd id="dd39">Earth <img class="earth" src="_img/objects/Earth_Sphere.png" /></dd>
-                <dd id="dd40">Soccer <img class="soccer" src="_img/objects/soccer.png" /></dd>
-              </dl>
-              <dl>
-                <dt>Michael Objects</dt>
-                <dd id="dd41">Baseball</dd>
-                <dd id="dd42">Laptop</dd>
-                <dd id="dd43">Baseball</dd>
-                <dd id="dd44">Laptop</dd>
-                <dd id="dd45">Baseball</dd>
-                <dd id="dd46">Laptop</dd>
-                <dd id="dd47">Baseball</dd>
-                <dd id="dd48">Laptop</dd>
-                <dd id="dd49">Baseball</dd>
-                <dd id="dd50">Laptop</dd>
-                <dd id="dd51">Baseball</dd>
-                <dd id="dd52">Laptop</dd>
-              </dl> -->
-            </div>
-          </div>
-        </div>
-        <div id="animateObjects" class="span12">
-          <div id="description"><p id="verboseDescription"></p></div>
-          <div id="leftObject" class="left">
-          </div>
-          <div id="rightObject" class="right">
-          </div>
-        </div>
-      </div>
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+  <script src="_js/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="_js/libs/jquery.ioslist-1.0.1.min.js"></script>
 
-    </div> <!-- /container -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="_js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-
-<script src="_js/libs/bootstrap/bootstrap.min.js"></script>
-<script src="_js/libs/jquery.ioslist-1.0.1.min.js"></script>
-
-<script src="_js/script.js"></script>
+  <script src="_js/script.js"></script>
 </body>
 </html>
