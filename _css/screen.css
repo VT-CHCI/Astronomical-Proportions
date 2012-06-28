@@ -79,3 +79,11 @@ dd.selectedObject:hover {
 #animateObjects {
 	height: 450px;
 }
+
+.objectAnimation {
+	margin-top:	50px;
+}
+
+#animateObjects {
+	padding: 50px;
+}
