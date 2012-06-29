@@ -1,7 +1,9 @@
+var displayedExp = 0;
+
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
-	var displayedExp = 0;
+	
 
 	$("#animateObjects").hide();
 
@@ -88,6 +90,7 @@ $(document).ready(function(){
 		$("#chooseObjects").toggle();
 		$("#animateObjects").toggle();
 		$("#reverseDescription").trigger("resetDescriptions");
+		$("#reverseDescription").show();
 	});
 
 	$("#chooseObjects").bind("activate", function(event, data) {
@@ -99,10 +102,10 @@ $(document).ready(function(){
 		$(".scaleExplanation").toggleClass("hidden");
 	});
 
-	$("#reverseDescription").click(function() {
-		$("#expl"+displayedExp++%3).toggleClass("hidden");
-		$("#expl"+displayedExp%3).toggleClass("hidden");
-	});
+	// $("#reverseDescription").click(function() {
+	// 	$("#expl"+displayedExp++%3).toggleClass("hidden");
+	// 	$("#expl"+displayedExp%3).toggleClass("hidden");
+	// });
 
 	$("#reverseDescription").bind("resetDescriptions", function() {
 		displayedExp = 0;
@@ -135,28 +138,36 @@ function scale(dimension, a, b) {
 		}		
 
 		var result = "";
-		if (Math.round(factor) ==1 ) {
-			result += '<span class="scaleExplanation">';
-			result += respEqual(left, right);
-			result += '</span>';
-		}
-		else if (factor < 1) {
+		if (Math.round(factor) == 1 ) {
 			result += '<span id="expl0" class="scaleExplanation">';
-			result += respSmaller(right, left, Math.round(1/factor), dimension);
-			result += '</span><span id="expl1" class="scaleExplanation hidden">';
-			result += respFraction(right, left, Math.round(1/factor), dimension);
-			result += '</span><span id="expl2" class="scaleExplanation hidden">';
-			result += respLarger(right, left, Math.round(1/factor), dimension);
+			result += respEqual(left, right, dimension);
 			result += '</span>';
+			$("#reverseDescription").hide();
 		}
 		else {
-			result += '<span id="expl0" class="scaleExplanation">';
-			result += respLarger(left, right, Math.round(factor), dimension);
-			result += '</span><span id="expl1" class="scaleExplanation hidden">';
-			result += respFraction(left, right, Math.round(factor), dimension);
-			result += '</span><span id="expl2" class="scaleExplanation hidden">';
-			result += respSmaller(left, right, Math.round(factor), dimension);
-			result += '</span>';
+			$("#reverseDescription").click(function() {
+				$("#expl"+displayedExp++%3).toggleClass("hidden");
+				$("#expl"+displayedExp%3).toggleClass("hidden");
+			});
+
+			if (factor < 1) {
+				result += '<span id="expl0" class="scaleExplanation">';
+				result += respSmaller(right, left, Math.round(1/factor), dimension);
+				result += '</span><span id="expl1" class="scaleExplanation hidden">';
+				result += respFraction(right, left, Math.round(1/factor), dimension);
+				result += '</span><span id="expl2" class="scaleExplanation hidden">';
+				result += respLarger(right, left, Math.round(1/factor), dimension);
+				result += '</span>';
+			}
+			else {
+				result += '<span id="expl0" class="scaleExplanation">';
+				result += respLarger(left, right, Math.round(factor), dimension);
+				result += '</span><span id="expl1" class="scaleExplanation hidden">';
+				result += respFraction(left, right, Math.round(factor), dimension);
+				result += '</span><span id="expl2" class="scaleExplanation hidden">';
+				result += respSmaller(left, right, Math.round(factor), dimension);
+				result += '</span>';
+			}
 		}
 
 		$("#verboseDescription").children().remove();

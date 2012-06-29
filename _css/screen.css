@@ -60,10 +60,10 @@ dd.selectedObject:hover {
 	width: 423px ! important;
 }
 
-.hidden {
+/*.hidden {
 	display: hidden;
 }
-
+*/
 #leftObject {
 	display: inline;
 }
