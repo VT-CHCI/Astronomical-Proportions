@@ -3,7 +3,7 @@
 	* password (ID)
 	* First name
 	* Lastname (NOT FOR STUDENTS)
-	* rails generate model Person email:string password:string firstName:string lastName:string roles:has_and_belongs_to_many permissions:has_and_belongs_to_many
+	* rails generate scaffold Person email:string password:string firstName:string lastName:string roles:has_and_belongs_to_many permissions:has_and_belongs_to_many
 
 1. Course 
 	* title
@@ -14,7 +14,7 @@
 	* objS
 	* startDate
 	* endDate
-	* rails generate model Course title:string password:string firstName:string lastName:string start:date end:date
+	* rails generate scaffold Course title:string password:string firstName:string lastName:string start:date end:date
 
 
 1. Meeting Time
@@ -27,7 +27,7 @@
 	* Sunday
 	* StartTime
 	* EndTime
-	* rails generate model MeetingTime monday:boolean tuesday:boolean wednesday:boolean thursday:boolean friday:boolean saturday:boolean sunday:boolean start:time end:time course:references
+	* rails generate scaffold MeetingTime monday:boolean tuesday:boolean wednesday:boolean thursday:boolean friday:boolean saturday:boolean sunday:boolean start:time end:time course:references
 
 1. Item
 	* name
@@ -42,15 +42,15 @@
 	* area
 	* volume
 	* person
-	* rails generate model Item name:string article:string filename:string diameter:float length:float width:float height:float area:float volume:float person:references
+	* rails generate scaffold Item name:string article:string filename:string diameter:float length:float width:float height:float area:float volume:float person:references
 
 1. Role (admin, analyst, teacher, student)
 	* name
-	* rails generate model Role name:string permissions:has_and_belongs_to_many persons:has_and_belongs_to_many
+	* rails generate scaffold Role name:string permissions:has_and_belongs_to_many persons:has_and_belongs_to_many
 
 1. Permission (create_image, share_image_w_teacher, share_image_w_class, share_img_w_all)
 	* name
-	* rails generate model Permission name:string roles:has_and_belongs_to_many persons:has_and_belongs_to_many
+	* rails generate scaffold Permission name:string roles:has_and_belongs_to_many persons:has_and_belongs_to_many
 
 1. Role_x_Permission (implied in person and permission)
 	* role
@@ -65,8 +65,8 @@
 	* Type
 	* Time
 	* Details
-	* rails generate model InteractionLog person:belongs_to logType:references time:time details:text
+	* rails generate scaffold InteractionLog person:belongs_to logType:references time:time details:text
 
 1. LogType
 	* name
-	* rails generate model LogType name:string 
+	* rails generate scaffold LogType name:string 
