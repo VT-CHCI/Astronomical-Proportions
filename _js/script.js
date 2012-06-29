@@ -90,7 +90,6 @@ $(document).ready(function(){
 		$("#chooseObjects").toggle();
 		$("#animateObjects").toggle();
 		$("#reverseDescription").trigger("resetDescriptions");
-		$("#reverseDescription").show();
 	});
 
 	$("#chooseObjects").bind("activate", function(event, data) {
@@ -145,9 +144,11 @@ function scale(dimension, a, b) {
 			$("#reverseDescription").hide();
 		}
 		else {
+			$("#reverseDescription").show();
 			$("#reverseDescription").click(function() {
 				$("#expl"+displayedExp++%3).toggleClass("hidden");
 				$("#expl"+displayedExp%3).toggleClass("hidden");
+				console.log("changed to expl"+displayedExp%3);
 			});
 
 			if (factor < 1) {
