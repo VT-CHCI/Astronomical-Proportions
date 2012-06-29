@@ -5,7 +5,7 @@
 	* Lastname (NOT FOR STUDENTS)
 	* rails generate model Person email:string password:string firstName:string lastName:string roles:has_and_belongs_to_many permissions:has_and_belongs_to_many
 
-1. Class 
+1. Course 
 	* title
 	* meeting timeS
 	* section number/course number
@@ -14,7 +14,7 @@
 	* objS
 	* startDate
 	* endDate
-	* rails generate model Class title:string password:string firstName:string lastName:string start:date end:date
+	* rails generate model Course title:string password:string firstName:string lastName:string start:date end:date
 
 
 1. Meeting Time
@@ -27,9 +27,9 @@
 	* Sunday
 	* StartTime
 	* EndTime
-	* rails generate model MeetingTime monday:boolean tuesday:boolean wednesday:boolean thursday:boolean friday:boolean saturday:boolean sunday:boolean start:time end:time
+	* rails generate model MeetingTime monday:boolean tuesday:boolean wednesday:boolean thursday:boolean friday:boolean saturday:boolean sunday:boolean start:time end:time course:references
 
-1. Object
+1. Item
 	* name
 	* article
 	* filename
@@ -41,8 +41,8 @@
 	* height
 	* area
 	* volume
-	* owner
-	* rails generate model Object name:string article:string filename:string diameter:float length:float width:float height:float area:float volume:float owner:references
+	* person
+	* rails generate model Item name:string article:string filename:string diameter:float length:float width:float height:float area:float volume:float person:references
 
 1. Role (admin, analyst, teacher, student)
 	* name
@@ -64,8 +64,8 @@
 	* Person
 	* Type
 	* Time
-	* Message
-	* rails generate model InteractionLog person:belongs_to logType:references
+	* Details
+	* rails generate model InteractionLog person:belongs_to logType:references time:time details:text
 
 1. LogType
 	* name
