@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Monday:</b>
+  <%= @meeting_time.monday %>
+</p>
+
+<p>
+  <b>Tuesday:</b>
+  <%= @meeting_time.tuesday %>
+</p>
+
+<p>
+  <b>Wednesday:</b>
+  <%= @meeting_time.wednesday %>
+</p>
+
+<p>
+  <b>Thursday:</b>
+  <%= @meeting_time.thursday %>
+</p>
+
+<p>
+  <b>Friday:</b>
+  <%= @meeting_time.friday %>
+</p>
+
+<p>
+  <b>Saturday:</b>
+  <%= @meeting_time.saturday %>
+</p>
+
+<p>
+  <b>Sunday:</b>
+  <%= @meeting_time.sunday %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @meeting_time.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @meeting_time.end %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @meeting_time.course %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_time_path(@meeting_time) %> |
+<%= link_to 'Back', meeting_times_path %>

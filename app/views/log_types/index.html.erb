@@ -1,0 +1,23 @@
+<h1>Listing log_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @log_types.each do |log_type| %>
+  <tr>
+    <td><%= log_type.name %></td>
+    <td><%= link_to 'Show', log_type %></td>
+    <td><%= link_to 'Edit', edit_log_type_path(log_type) %></td>
+    <td><%= link_to 'Destroy', log_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Log type', new_log_type_path %>

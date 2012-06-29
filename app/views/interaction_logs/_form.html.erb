@@ -1,0 +1,33 @@
+<%= form_for(@interaction_log) do |f| %>
+  <% if @interaction_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interaction_log.errors.count, "error") %> prohibited this interaction_log from being saved:</h2>
+
+      <ul>
+      <% @interaction_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :person %><br />
+    <%= f.text_field :person %>
+  </div>
+  <div class="field">
+    <%= f.label :logType %><br />
+    <%= f.text_field :logType %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br />
+    <%= f.text_area :details %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

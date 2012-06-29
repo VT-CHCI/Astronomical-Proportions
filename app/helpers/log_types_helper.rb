@@ -1,0 +1,2 @@
+module LogTypesHelper
+end

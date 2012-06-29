@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  article: MyString
+  filename: MyString
+  diameter: 1.5
+  length: 1.5
+  width: 1.5
+  height: 1.5
+  area: 1.5
+  volume: 1.5
+  person: 
+
+two:
+  name: MyString
+  article: MyString
+  filename: MyString
+  diameter: 1.5
+  length: 1.5
+  width: 1.5
+  height: 1.5
+  area: 1.5
+  volume: 1.5
+  person: 

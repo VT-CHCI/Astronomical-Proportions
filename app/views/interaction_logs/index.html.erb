@@ -1,0 +1,29 @@
+<h1>Listing interaction_logs</h1>
+
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Logtype</th>
+    <th>Time</th>
+    <th>Details</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @interaction_logs.each do |interaction_log| %>
+  <tr>
+    <td><%= interaction_log.person %></td>
+    <td><%= interaction_log.logType %></td>
+    <td><%= interaction_log.time %></td>
+    <td><%= interaction_log.details %></td>
+    <td><%= link_to 'Show', interaction_log %></td>
+    <td><%= link_to 'Edit', edit_interaction_log_path(interaction_log) %></td>
+    <td><%= link_to 'Destroy', interaction_log, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Interaction log', new_interaction_log_path %>

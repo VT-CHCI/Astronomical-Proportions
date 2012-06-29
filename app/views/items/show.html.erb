@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Article:</b>
+  <%= @item.article %>
+</p>
+
+<p>
+  <b>Filename:</b>
+  <%= @item.filename %>
+</p>
+
+<p>
+  <b>Diameter:</b>
+  <%= @item.diameter %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @item.length %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @item.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @item.height %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @item.area %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @item.volume %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @item.person %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

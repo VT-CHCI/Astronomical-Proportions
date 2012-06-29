@@ -1,4 +1,20 @@
 ScalingDimensions::Application.routes.draw do
+  resources :interaction_logs
+
+  resources :log_types
+
+  resources :permissions
+
+  resources :roles
+
+  resources :items
+
+  resources :meeting_times
+
+  resources :courses
+
+  resources :people
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

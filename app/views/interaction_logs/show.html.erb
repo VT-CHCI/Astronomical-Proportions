@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Person:</b>
+  <%= @interaction_log.person %>
+</p>
+
+<p>
+  <b>Logtype:</b>
+  <%= @interaction_log.logType %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @interaction_log.time %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%= @interaction_log.details %>
+</p>
+
+
+<%= link_to 'Edit', edit_interaction_log_path(@interaction_log) %> |
+<%= link_to 'Back', interaction_logs_path %>
