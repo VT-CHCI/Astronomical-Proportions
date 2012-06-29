@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
+	var displayedExp = 0;
 
 	$("#animateObjects").hide();
 
@@ -86,6 +87,7 @@ $(document).ready(function(){
 	$("#animateObjects").bind("activate", function(event, data) {
 		$("#chooseObjects").toggle();
 		$("#animateObjects").toggle();
+		$("#reverseDescription").trigger("resetDescriptions");
 	});
 
 	$("#chooseObjects").bind("activate", function(event, data) {
@@ -96,60 +98,89 @@ $(document).ready(function(){
 		$("#rightObject").empty();
 		$(".scaleExplanation").toggleClass("hidden");
 	});
+
+	$("#reverseDescription").click(function() {
+		$("#expl"+displayedExp++%3).toggleClass("hidden");
+		$("#expl"+displayedExp%3).toggleClass("hidden");
+	});
+
+	$("#reverseDescription").bind("resetDescriptions", function() {
+		displayedExp = 0;
+		$(".scaleExplanation").addClass("hidden");
+		$("#expl0").removeClass("hidden");
+	});
 });
 
 function scale(dimension, a, b) {
 	function verboseDescription(left, right, factor) {
-		var prefix = '<span class="scaleExplanation">The ' + dimension + ' of ' + left.attr('attrarticle') + ' ' + left.attr('attrname') + ' is ';
-		var middle = "";
-		var suffix = " that of " + right.attr("attrarticle") + " " + right.attr("attrname") + ".</span>";
-		var revPrefix = '<span class="scaleExplanation hidden">The ' + dimension + ' of ' + right.attr('attrarticle') + ' ' + right.attr('attrname') + ' is ';
-		var revMiddle = "";
-		var revSuffix = left.attr("attrarticle") + " " + left.attr("attrname") + "'s.";
-		
-		if (factor > 1) {
-			middle = factor + " times larger than";
-			revMiddle = 1/factor + " of ";
+		//   users selects L <--> S                                       users selects S <--> L
+		// * The diameter of L is 7 times larger than the diameter of S. 	The diameter of S is 7 times smaller than the diameter of L.
+		// * The diameter of S is 1/7 of the diameter of L.              	The diameter of S is 1/7 of the diameter of L.
+		// * The diameter of S is 7 times smaller than the diameter of L. The diameter of L is 7 times larger than the diameter of S.
+
+		function respLarger(a, b, factor, dimension) {
+			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is " + factor + " times larger than the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
+		}
+
+		function respFraction(a, b, factor, dimension) {
+			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is 1/" + factor + " (" + 1/factor + ") of the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+		}
+
+		function respSmaller(a, b, factor, dimension) {
+			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is " + factor + " times smaller than the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+		}
+
+		function respEqual(a, b, dimension) {
+			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is equal to the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
+		}		
+
+		var result = "";
+		if (Math.round(factor) ==1 ) {
+			result += '<span class="scaleExplanation">';
+			result += respEqual(left, right);
+			result += '</span>';
 		}
 		else if (factor < 1) {
-			middle = 1/factor + " times smaller than";
-			revMiddle = factor + " of ";
+			result += '<span id="expl0" class="scaleExplanation">';
+			result += respSmaller(right, left, Math.round(1/factor), dimension);
+			result += '</span><span id="expl1" class="scaleExplanation hidden">';
+			result += respFraction(right, left, Math.round(1/factor), dimension);
+			result += '</span><span id="expl2" class="scaleExplanation hidden">';
+			result += respLarger(right, left, Math.round(1/factor), dimension);
+			result += '</span>';
 		}
 		else {
-			middle = "equal to";
-			revMiddle = "equal to";
+			result += '<span id="expl0" class="scaleExplanation">';
+			result += respLarger(left, right, Math.round(factor), dimension);
+			result += '</span><span id="expl1" class="scaleExplanation hidden">';
+			result += respFraction(left, right, Math.round(factor), dimension);
+			result += '</span><span id="expl2" class="scaleExplanation hidden">';
+			result += respSmaller(left, right, Math.round(factor), dimension);
+			result += '</span>';
 		}
 
-		var reverse = revPrefix + revMiddle + revSuffix + '</span><img id="reverseDescription" class ="pull-right" src="_img/objects/arrows-double-reversed.svg" width="50"/>';
-
 		$("#verboseDescription").children().remove();
-		$("#verboseDescription").append(prefix + middle + suffix + reverse);
-		$("#reverseDescription").click(function(){
-			$(".scaleExplanation").toggleClass("hidden");
-		});
-		// $("#verboseDescription").append(reverse);
+		$("#verboseDescription").append(result);
 	}
 	var factor = parseFloat(a.attr("attr"+dimension))/parseFloat(b.attr("attr"+dimension));
 	if (parseFloat(b.attr("attr"+dimension)) > parseFloat(a.attr("attr"+dimension))) {
 		window.setTimeout(
 			function () {
 				var aWidth = Math.max(b.width()*factor, 5);
-				var marginLeft = 650-aWidth;
+				var marginLeft = 705-aWidth;
 				a.animate({
 					width: aWidth, 
 					marginLeft: marginLeft+"px"
 				}, 1000);
 			}
 		, 1000);
-
-		// verboseDescription(a, b);
 	}
 	else {
 		//a > b
 		window.setTimeout(
 			function () {
 				var bWidth = Math.max(a.width()/factor, 5);
-				var marginRight = 650-bWidth;
+				var marginRight = 705-bWidth;
 				b.animate({
 					width: bWidth, 
 					marginRight: marginRight+"px"

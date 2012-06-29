@@ -84,6 +84,14 @@ dd.selectedObject:hover {
 	margin-top:	50px;
 }
 
-#animateObjects {
-	padding: 50px;
+#description {
+	margin-top: 325px;
+}
+
+#description p, #description img {
+	display: inline;
+}
+
+#description img {
+	margin-right: 20px;
 }
