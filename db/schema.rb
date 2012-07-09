@@ -11,15 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120629231056) do
+ActiveRecord::Schema.define(:version => 20120704185621) do
 
   create_table "courses", :force => true do |t|
     t.string   "title"
-    t.string   "password"
-    t.string   "firstName"
-    t.string   "lastName"
-    t.date     "start"
-    t.date     "end"
+    t.string   "number"
+    t.string   "section"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -67,9 +64,12 @@ ActiveRecord::Schema.define(:version => 20120629231056) do
     t.boolean  "friday"
     t.boolean  "saturday"
     t.boolean  "sunday"
-    t.time     "start"
-    t.time     "end"
+    t.string   "period"
+    t.time     "startTime"
+    t.time     "endTime"
     t.integer  "course_id"
+    t.date     "startDate"
+    t.date     "endDate"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -77,13 +77,25 @@ ActiveRecord::Schema.define(:version => 20120629231056) do
   add_index "meeting_times", ["course_id"], :name => "index_meeting_times_on_course_id"
 
   create_table "people", :force => true do |t|
-    t.string   "email"
     t.string   "password"
     t.string   "firstName"
     t.string   "lastName"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "people", ["email"], :name => "index_people_on_email", :unique => true
+  add_index "people", ["reset_password_token"], :name => "index_people_on_reset_password_token", :unique => true
 
   create_table "permissions", :force => true do |t|
     t.string   "name"

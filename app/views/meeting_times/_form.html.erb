@@ -40,16 +40,28 @@
     <%= f.check_box :sunday %>
   </div>
   <div class="field">
-    <%= f.label :start %><br />
-    <%= f.time_select :start %>
+    <%= f.label :period %><br />
+    <%= f.text_field :period %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
-    <%= f.time_select :end %>
+    <%= f.label :startTime %><br />
+    <%= f.time_select :startTime %>
+  </div>
+  <div class="field">
+    <%= f.label :endTime %><br />
+    <%= f.time_select :endTime %>
   </div>
   <div class="field">
     <%= f.label :course %><br />
     <%= f.text_field :course %>
+  </div>
+  <div class="field">
+    <%= f.label :startDate %><br />
+    <%= f.date_select :startDate %>
+  </div>
+  <div class="field">
+    <%= f.label :endDate %><br />
+    <%= f.date_select :endDate %>
   </div>
   <div class="actions">
     <%= f.submit %>

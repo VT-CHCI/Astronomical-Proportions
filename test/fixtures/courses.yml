@@ -2,16 +2,10 @@
 
 one:
   title: MyString
-  password: MyString
-  firstName: MyString
-  lastName: MyString
-  start: 2012-06-29
-  end: 2012-06-29
+  number: MyString
+  section: MyString
 
 two:
   title: MyString
-  password: MyString
-  firstName: MyString
-  lastName: MyString
-  start: 2012-06-29
-  end: 2012-06-29
+  number: MyString
+  section: MyString

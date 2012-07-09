@@ -8,9 +8,12 @@ class CreateMeetingTimes < ActiveRecord::Migration
       t.boolean :friday
       t.boolean :saturday
       t.boolean :sunday
-      t.time :start
-      t.time :end
+      t.string :period
+      t.time :startTime
+      t.time :endTime
       t.references :course
+      t.date :startDate
+      t.date :endDate
 
       t.timestamps
     end

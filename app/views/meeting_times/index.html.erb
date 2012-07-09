@@ -9,9 +9,12 @@
     <th>Friday</th>
     <th>Saturday</th>
     <th>Sunday</th>
-    <th>Start</th>
-    <th>End</th>
+    <th>Period</th>
+    <th>Starttime</th>
+    <th>Endtime</th>
     <th>Course</th>
+    <th>Startdate</th>
+    <th>Enddate</th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,9 +29,12 @@
     <td><%= meeting_time.friday %></td>
     <td><%= meeting_time.saturday %></td>
     <td><%= meeting_time.sunday %></td>
-    <td><%= meeting_time.start %></td>
-    <td><%= meeting_time.end %></td>
+    <td><%= meeting_time.period %></td>
+    <td><%= meeting_time.startTime %></td>
+    <td><%= meeting_time.endTime %></td>
     <td><%= meeting_time.course %></td>
+    <td><%= meeting_time.startDate %></td>
+    <td><%= meeting_time.endDate %></td>
     <td><%= link_to 'Show', meeting_time %></td>
     <td><%= link_to 'Edit', edit_meeting_time_path(meeting_time) %></td>
     <td><%= link_to 'Destroy', meeting_time, confirm: 'Are you sure?', method: :delete %></td>

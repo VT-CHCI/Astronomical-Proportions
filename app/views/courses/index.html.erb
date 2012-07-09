@@ -3,11 +3,8 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Password</th>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Start</th>
-    <th>End</th>
+    <th>Number</th>
+    <th>Section</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,11 +13,8 @@
 <% @courses.each do |course| %>
   <tr>
     <td><%= course.title %></td>
-    <td><%= course.password %></td>
-    <td><%= course.firstName %></td>
-    <td><%= course.lastName %></td>
-    <td><%= course.start %></td>
-    <td><%= course.end %></td>
+    <td><%= course.number %></td>
+    <td><%= course.section %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
     <td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>

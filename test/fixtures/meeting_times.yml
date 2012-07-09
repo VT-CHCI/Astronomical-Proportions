@@ -8,9 +8,12 @@ one:
   friday: false
   saturday: false
   sunday: false
-  start: 2012-06-29 19:05:04
-  end: 2012-06-29 19:05:04
+  period: MyString
+  startTime: 2012-07-01 23:01:47
+  endTime: 2012-07-01 23:01:47
   course: 
+  startDate: 2012-07-01
+  endDate: 2012-07-01
 
 two:
   monday: false
@@ -20,6 +23,9 @@ two:
   friday: false
   saturday: false
   sunday: false
-  start: 2012-06-29 19:05:04
-  end: 2012-06-29 19:05:04
+  period: MyString
+  startTime: 2012-07-01 23:01:47
+  endTime: 2012-07-01 23:01:47
   course: 
+  startDate: 2012-07-01
+  endDate: 2012-07-01
