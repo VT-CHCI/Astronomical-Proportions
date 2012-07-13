@@ -1,4 +1,5 @@
 class MeetingTimesController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
   # GET /meeting_times
   # GET /meeting_times.json
   def index

@@ -1,4 +1,5 @@
 class PermissionsController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
   # GET /permissions
   # GET /permissions.json
   def index

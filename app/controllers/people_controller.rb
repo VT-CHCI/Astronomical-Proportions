@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
   # GET /people
   # GET /people.json
   def index

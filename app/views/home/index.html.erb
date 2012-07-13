@@ -1,4 +1,59 @@
-<h1>Home#index</h1>
-<!-- <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
-<p>Find me in app/views/home/index.html.erb</p>
+<!-- <h1>Home#index</h1>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<p>Find me in app/views/home/index.html.erb</p> -->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Scale It!</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="dimensionSelector" id="diameter"><a href="#diameter">Diameter</a></li>
+            <li class="dimensionSelector" id="length"><a href="#length">Length</a></li>
+            <li class="dimensionSelector" id="width"><a href="#width">Width</a></li>
+            <li class="dimensionSelector" id="height"><a href="#height">Height</a></li>
+            <li class="dimensionSelector" id="area"><a href="#area">Area</a></li>
+            <li class="dimensionSelector" id="volume"><a href="#volume">Volume</a></li>
+          </ul>
+        </div> <!--/.nav-collapse -->
+      </div> <!-- /.container -->
+    </div> <!-- /.navbar-inner -->
+  </div> <!-- /.navbar-fixed-top -->
+
+  <div class="container">
+    <div class="row">
+      <div id="chooseObjects" class="span12">
+        <div class ="left">
+          <div id="list1" class="listContainer">
+          </div>
+        </div>
+
+        <div class="right">
+          <div id="list2" class="listContainer">
+          </div>
+        </div>
+      </div>
+      <div id="animateObjects" class="span10">
+        <div>
+          <div id="leftObject" class="objectAnimation left">
+          </div>
+          <div id="rightObject" class="objectAnimation right">
+          </div>
+        </div>
+        <div id="description">
+          <%= image_tag "arrows-double-reversed.svg", :id=>"reverseDescription",  :width=>"50" %>
+          <p id="verboseDescription"></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <!-- <p>&copy; Company 2012</p> -->
+    </footer>
+
+  </div>

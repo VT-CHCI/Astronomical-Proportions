@@ -1,4 +1,5 @@
 class InteractionLogsController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
   # GET /interaction_logs
   # GET /interaction_logs.json
   def index

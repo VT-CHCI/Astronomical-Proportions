@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
+  
   # GET /items
   # GET /items.json
   def index
@@ -25,6 +27,7 @@ class ItemsController < ApplicationController
   # GET /items/new.json
   def new
     @item = Item.new
+    # @item.person = current_person
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +43,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    params[:item][:person] =  current_person # add the current user as the owner of the new item.
     @item = Item.new(params[:item])
 
     respond_to do |format|

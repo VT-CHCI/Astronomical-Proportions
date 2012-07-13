@@ -12,7 +12,7 @@
 
 <p>
   <b>Filename:</b>
-  <%= @item.filename %>
+  <%= image_tag @item.filename.to_s, :width=>'200' %>
 </p>
 
 <p>
@@ -47,7 +47,7 @@
 
 <p>
   <b>Person:</b>
-  <%= @item.person %>
+  <%= @item.person.email %>
 </p>
 
 

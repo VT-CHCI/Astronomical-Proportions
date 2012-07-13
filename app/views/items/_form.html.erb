@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for @item, :html => {:multipart => true} do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :filename %><br />
-    <%= f.text_field :filename %>
+    <%= f.file_field :filename %>
   </div>
   <div class="field">
     <%= f.label :diameter %><br />
@@ -48,8 +48,8 @@
     <%= f.text_field :volume %>
   </div>
   <div class="field">
-    <%= f.label :person %><br />
-    <%= f.text_field :person %>
+    <!-- <%= f.label :person %><br /> -->
+    <%= f.hidden_field :person %>
   </div>
   <div class="actions">
     <%= f.submit %>

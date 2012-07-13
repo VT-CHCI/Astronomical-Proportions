@@ -40,3 +40,8 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+
+#adding image uploads via carrierwacve
+gem 'carrierwave'
+

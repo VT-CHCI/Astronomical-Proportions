@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_filter :authenticate_person!, :except => [:show, :index]
   # GET /courses
   # GET /courses.json
   def index

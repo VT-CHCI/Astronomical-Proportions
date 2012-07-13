@@ -3,7 +3,7 @@
 	* password (ID)
 	* First name
 	* Lastname (NOT FOR STUDENTS)
-	* rails generate scaffold Person password:string firstName:string lastName:string 
+	* rails generate scaffold Person firstName:string lastName:string 
 
 	later: roles:has_and_belongs_to_many permissions:has_and_belongs_to_many
 

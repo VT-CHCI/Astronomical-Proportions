@@ -1,4 +1,5 @@
 class LogTypesController < ApplicationController
+  before_filter :authenticate_person!
   # GET /log_types
   # GET /log_types.json
   def index
