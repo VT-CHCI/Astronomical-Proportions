@@ -34,8 +34,8 @@ $(document).ready(function(){
 
 	$("#chooseObjects").bind("objectsLoaded", function() {
 
-		var asset_path_bs = "<%= asset_path("rails.png")%>";
-		asset_path_bs = asset_path_bs.substring(0,asset_path_bs.indexOf("rails.png")) + "/objects/";
+		var asset_path_bs = '<%= asset_path("rails.png")%>';
+		asset_path_bs = asset_path_bs.substring(0,asset_path_bs.indexOf("rails.png")) + "objects/";
 			
 			$.each(objects, function(idx, val) {
 				
