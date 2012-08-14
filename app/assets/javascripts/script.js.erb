@@ -10,7 +10,6 @@ $(document).ready(function(){
 
 	var urlDimension = location.hash.replace("#","");
 	if (urlDimension.length == 0) {
-		// location.hash = "#" + DEFAULT_LOCATION;
 		urlDimension = DEFAULT_LOCATION;
 		$("#"+DEFAULT_LOCATION).addClass("active");
 		clog("started with no dimension, defaulted to " + DEFAULT_LOCATION);
@@ -20,41 +19,7 @@ $(document).ready(function(){
 		clog("started with dimension: " + urlDimension);
 	}
 
-	// $.ajax({
-	//   url: 'objects.json',
-	//   dataType: 'json',
-	//   success: function(data) {
-	// 		objects = data.objects;
-	// 		$("#chooseObjects").trigger("objectsLoaded");
-	//   },
-	//   error: function(data){
-	// 		console.log(arguments);
-	//   }
-	// });
-
 	$("#chooseObjects").bind("objectsLoaded", function() {
-
-		// var asset_path_bs = '<%= asset_path("rails.png")%>';
-		// asset_path_bs = asset_path_bs.substring(0,asset_path_bs.indexOf("rails.png")) + "objects/";
-		// asset_path_bs = "assets/objects/";
-			
-		// $.each(objects, function(idx, val) {
-			
-		// 	var dt = "<dl><dt>" + idx + "</dt>";		
-			
-		// 	for (var j = 0; j < val.length; j++) {
-		// 		var dimensions = "";
-		// 		for (var objProperty in objects[idx][j]) {
-		// 			dimensions += "attr" + objProperty + '="' + objects[idx][j][objProperty] + '" ';
-		// 		}
-
-  		//     			var dd = '<dd id="' + objects[idx][j]['id'] + '"><p>' + objects[idx][j]['name'] + '</p><img class="iosListImage" src="' + asset_path_bs + objects[idx][j]['file'] + '" ' + urlDimension + '="' + objects[idx][j][urlDimension] + '" width="250" init-width="250" ' + dimensions + '/></dd>';
-		// 		dt += dd;
-		// 	}
-
-		// 	dt += "</dl>";
-		// 	$(".listContainer").append(dt);
-		// });
 
 		$("#list1").clone().appendTo("#rightList");
 		$("#rightList > .listContainer").attr("id", "list2");
@@ -65,14 +30,12 @@ $(document).ready(function(){
 			var id = $(this).attr("id");
 			$("#"+id+" dd").click(function(){
 				var oldSelection = $("#"+id+" dd.selectedObject");
-				// clog(oldSelection.attr("id"));
 				
 				oldSelection.toggleClass("selectedObject");
 				if (!oldSelection.attr("id")) {
 					$(this).toggleClass("selectedObject");
 				}
 				else if (oldSelection.attr("id") != $(this).attr("id")) {
-					clog("got in here");
 					$(this).toggleClass("selectedObject");
 				}
 				if ($(".selectedObject").length == 2) {
@@ -107,122 +70,6 @@ $(document).ready(function(){
 
 	});
 
-	// objects = {
-	// 	"Mr. Nate" : [
-	// 		{
-	// 			"name" : "Earth",
-	// 			"article" : "the",
-	// 			"id" : "0",
-	// 			"file" : "earth.svg",
-	// 			"img_width" : "136",	
-	// 			"img_height" : "136",	
-	// 			"diameter" : "1.2713600e7", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "5.11201962e14",	
-	// 			"volume" : "1.08683241e21"	
-	// 		},
-			
-	// 		{
-	// 			"name" : "Soccer ball",
-	// 			"article" : "a",
-	// 			"id" : "1",
-	// 			"file" : "soccerball.svg",
-	// 			"img_width" : "450",	
-	// 			"img_height" : "483",	
-	// 			"diameter" : "2.2281692e-1", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "1.5393804e-1",	
-	// 			"volume" : "5.79219431e-3"	
-	// 		}
-	// 	],
-
-	// 	"Mike" : [
-	// 		{
-	// 			"name" : "Moon",
-	// 			"article" : "the",
-	// 			"id" : "2",
-	// 			"file" : "moon.svg",
-	// 			"img_width" : "292",	
-	// 			"img_height" : "292",	
-	// 			"diameter" : "3.474800e6", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "3.7932328100000e13",	
-	// 			"volume" : "2.19678756e19"	
-	// 		}
-	// 	],
-
-	// 	"Emily" : [
-	// 		{
-	// 			"name": "Basketball",
-	// 			"article" : "a",
-	// 			"id" : "3",
-	// 			"file" : "basketball.svg",
-	// 			"img_width" : "370",	
-	// 			"img_height" : "370",	
-	// 			"diameter" : "0.238732415", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "1.79049312e-1",	
-	// 			"volume" : "7.12414576e-3"	
-	// 		},
-	// 		{
-	// 			"name" : "Baseball",
-	// 			"article" : "a",
-	// 			"id" : "4",
-	// 			"file" : "baseball.svg",
-	// 			"img_width" : "520",	
-	// 			"img_height" : "520",	
-	// 			"diameter" : "7.5e-2", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "1.76714587e-2",	
-	// 			"volume" : "2.20893233e-4"	
-	// 		}
-	// 	],
-
-	// 	"Deborah" : [
-	// 		 {
-	// 		 	"name" : "Golf ball",
-	// 			"article" : "a",
-	// 			"id" : "5",
-	// 			"file" : "golfball.svg",
-	// 			"img_width" : "252",	
-	// 			"img_height" : "252",	
-	// 			"diameter" : "4.3e-2", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "5.80880482e-3",	
-	// 			"volume" : "4.16297679e-5"	
-	// 		}
-	// 	],
-
-	// 	"Steve" : [
-	// 		{
-	// 			"name" : "Tennis ball",
-	// 			"article" : "a",
-	// 			"id" : "6",
-	// 			"file" : "tennisball.svg",
-	// 			"img_width" : "128",	
-	// 			"img_height" : "127",	
-	// 			"diameter" : "6.7e-2", 	
-	// 			"length" : "",	
-	// 			"width" : "",	
-	// 			"height" : "",	
-	// 			"area" : "1.41026094e-2",	
-	// 			"volume" : "1.57479139e-4"	
-	// 		}
-	// 	]
-	// };
-
 	$("#chooseObjects").trigger("objectsLoaded");
 
 
@@ -252,11 +99,6 @@ $(document).ready(function(){
 		$("#rightObject").empty();
 		$(".scaleExplanation").toggleClass("hidden");
 	});
-
-	// $("#reverseDescription").click(function() {
-	// 	$("#expl"+displayedExp++%3).toggleClass("hidden");
-	// 	$("#expl"+displayedExp%3).toggleClass("hidden");
-	// });
 
 	$("#reverseDescription").bind("resetDescriptions", function() {
 		displayedExp = 0;
