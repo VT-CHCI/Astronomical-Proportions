@@ -58,5 +58,7 @@ module ScalingDimensions
 
     # added for heroku for devise
     config.assets.initialize_on_precompile = false
+
+    DEFAULT_ITEM_WIDTH = 250
   end
 end

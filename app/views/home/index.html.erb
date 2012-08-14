@@ -29,14 +29,23 @@
   <div class="container">
     <div class="row">
       <div id="chooseObjects" class="span12">
-        <div class ="left">
+        <div id="leftList" class ="left">
           <div id="list1" class="listContainer">
+            <% @itemsDict.each do |person, objs| %>
+              <dl>
+                <dt><%= person.firstName %></dt>
+                <% objs.each do |item| %>
+                  <dd><p><%= item.name %></p>
+                  <img class="iosListImage" width="<%= ScalingDimensions::Application::DEFAULT_ITEM_WIDTH %>" attrvolume="<%= item.volume %>" attrarea="<%= item.area %>" attrheight="<%= item.height %>" attrwidth="<%= item.width %>" attrlength="<%= item.length %>" attrdiameter="<%= item.diameter %>" attrarticle="<%= item.article %>" attrname="<%= item.name %>" src="<%= item.filename %>"></dd>
+                <% end %>
+              </dl>
+            <% end %>
           </div>
         </div>
 
-        <div class="right">
-          <div id="list2" class="listContainer">
-          </div>
+        <div id="rightList" class="right">
+          <!-- <div id="list2" class="listContainer">
+          </div> -->
         </div>
       </div>
       <div id="animateObjects" class="span10">
