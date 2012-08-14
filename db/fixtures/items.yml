@@ -1,0 +1,56 @@
+Earth:
+  name: "Earth"
+  article: "the"
+  diameter: 1.2713600e7
+  area: 5.11201962e14
+  volume: 1.08683241e21
+  person_id: 4
+
+Soccer:
+  name: "soccer ball"
+  article: "a"
+  diameter: 2.2281692e-1
+  area: 1.5393804e-1
+  volume: 5.79219431e-3
+  person_id: 4
+
+Moon:
+  name: "Moon"
+  article: "the"
+  diameter: 3.474800e6
+  area: 3.7932328100000e13
+  volume: 2.19678756e19
+  person_id: 1
+
+Basketball:
+  name: "basketball"
+  article: "a"
+  diameter: 0.238732415
+  area: 1.79049312e-1
+  volume: 7.12414576e-3
+  person_id: 1
+
+Baseball:
+  name: "baseball"
+  article: "a"
+  diameter: 7.5e-2
+  area: 1.76714587e-2
+  volume: 2.20893233e-4
+  person_id: 1
+
+Golfball:
+  name: "golf ball"
+  article: "a"
+  diameter: 4.3e-2
+  area: 5.80880482e-3
+  volume: 4.16297679e-5
+  person_id: 2
+
+Tennisball:
+  name: "tennis ball"
+  article: "a"
+  diameter: 6.7e-2
+  area: 1.41026094e-2
+  volume: 1.57479139e-4
+  person_id: 3
+

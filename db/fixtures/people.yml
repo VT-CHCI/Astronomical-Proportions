@@ -1,0 +1,27 @@
+mike:
+    id: 1
+    firstName: "Michael"
+    lastName: "Stewart"
+    email: "tgm@xyz.edu"
+    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
+
+tatar:
+    id: 2
+    firstName: "Deborah"
+    lastName: "Tatar"
+    email: "tgm+deborah@xyz.edu"
+    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
+
+steve:
+    id: 3
+    firstName: "Steve"
+    lastName: "Harrison"
+    email: "tgm+steve@xyz.edu"
+    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
+
+nate:
+    id: 4
+    firstName: "Nathan"
+    lastName: "Shotwell"
+    email: "tgm+nate@xyz.edu"
+    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
