@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704185621) do
+ActiveRecord::Schema.define(:version => 20120814160700) do
+
+  create_table "applications", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "courses", :force => true do |t|
     t.string   "title"
@@ -26,8 +32,10 @@ ActiveRecord::Schema.define(:version => 20120704185621) do
     t.integer  "logType_id"
     t.time     "time"
     t.text     "details"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "application_id"
+    t.text     "unknown_user_details"
   end
 
   add_index "interaction_logs", ["logType_id"], :name => "index_interaction_logs_on_logType_id"
