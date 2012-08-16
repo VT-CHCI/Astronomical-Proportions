@@ -27,7 +27,7 @@
 <body>
 	<div id="user_nav">
 		<% if person_signed_in? %>
-			Signed in as <%= current_person.email %>. Not you?
+			Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
 			<%= link_to "Sign out", destroy_person_session_path %>
 		<% else %>
 			<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
