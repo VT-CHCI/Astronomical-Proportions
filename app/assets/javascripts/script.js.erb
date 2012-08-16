@@ -1,5 +1,11 @@
 var displayedExp = 0;
 
+var log_types = { //check these values against the order in db/fixtures/log_types.yml
+	"begin":	1, 
+	"select":	2, 
+	"action":	3
+};
+
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
@@ -12,10 +18,12 @@ $(document).ready(function(){
 	if (urlDimension.length == 0) {
 		urlDimension = DEFAULT_LOCATION;
 		$("#"+DEFAULT_LOCATION).addClass("active");
+		sendLog([[log_types["begin"], "started with no dimension, defaulted to " + DEFAULT_LOCATION]]);
 		clog("started with no dimension, defaulted to " + DEFAULT_LOCATION);
 	}
 	else {
 		$("#"+urlDimension).toggleClass("active");
+		sendLog([[log_types["begin"], "started with dimension: " + urlDimension]]);
 		clog("started with dimension: " + urlDimension);
 	}
 
@@ -33,14 +41,23 @@ $(document).ready(function(){
 				
 				oldSelection.toggleClass("selectedObject");
 				if (!oldSelection.attr("id")) {
+					sendLog([[log_types["select"], "from: " + id + "selected: " + $(this).find("img").attr("attrname")]]);
+					clog("from " + id + "selected: " + $(this).attr("id"));
 					$(this).toggleClass("selectedObject");
 				}
 				else if (oldSelection.attr("id") != $(this).attr("id")) {
+					sendLog([[
+						log_types["select"], 
+						"from: " + id + "changed selection from: " + oldSelection.attr("id") + 
+						" to: " + $(this).attr("id")]]);
+					clog("from: " + id + "changed selection from: " + oldSelection.attr("id") + 
+						" to: " + $(this).attr("id"));
 					$(this).toggleClass("selectedObject");
 				}
 				if ($(".selectedObject").length == 2) {
 					clog("from list 1, user selected: " + $("#list1 dd.selectedObject img").attr("attrname"));
 					clog("from list 2, user selected: " + $("#list2 dd.selectedObject img").attr("attrname"));
+					sendLog([[log_types["action"], "animating with left object: " + $("#list1 dd.selectedObject img").attr("attrname") + " and right object: " + $("#list2 dd.selectedObject img").attr("attrname")]])
 					$("#leftObject").append($("#list1 dd.selectedObject img").clone());
 					$("#rightObject").append($("#list2 dd.selectedObject img").clone());
 					scale(urlDimension, $("#leftObject img"), $("#rightObject img"));
@@ -77,6 +94,7 @@ $(document).ready(function(){
 	$(".nav li").click(function() {
 		urlDimension = $(this).attr("id");
 		clog("changed dimension to: " + $(this).attr("id"));
+		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id")]]);
 		$(".nav li.active").toggleClass("active");
 		$(this).toggleClass("active");
 		if ($("#chooseObjects").is(":hidden")) {
@@ -142,7 +160,8 @@ function scale(dimension, a, b) {
 			$("#reverseDescription").click(function() {
 				$("#expl"+displayedExp++%3).toggleClass("hidden");
 				$("#expl"+displayedExp%3).toggleClass("hidden");
-				console.log("changed to expl"+displayedExp%3);
+				clog("changed to expl "+displayedExp%3);
+				sendLog([[log_types["action"], "explanation changed to: "+$(".scaleExplanation:visible").text()]]);
 			});
 
 			if (factor < 1) {
@@ -204,4 +223,36 @@ function clog(msg) {
 	if (logging) {
 		console.log(msg);
 	}
+}
+
+function currentUser() {
+	var user;
+	if ($("#current_person") && $("#current_person").text().length > 0) {
+		user = $("#current_person").text();
+	}
+	return user;
+}
+
+function sendLog (logInfoPairs) {
+	var logs = [];
+	for (i=0; i<logInfoPairs.length; i++) {
+		var log = {
+			"logType_id":	logInfoPairs[i][0], 
+			"details":		logInfoPairs[i][1]
+		};
+		var p_id = $("#current_person_id");
+		if (p_id && p_id.text()) {
+			log["person_id"] = p_id.text();
+		}
+		logs.push(log);
+	}
+	$.post("http://localhost:3000/interaction_logs/service", 
+		{"logs":logs}, 
+		function(data, textStatus, jqXHR){
+			console.log("in my callback");
+			console.log(data);
+			console.log(textStatus);
+			console.log(jqXHR);
+		}
+	);
 }

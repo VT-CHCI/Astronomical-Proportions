@@ -1,9 +1,13 @@
 ScalingDimensions::Application.routes.draw do
+  resources :applications
+
   get "home/index"
 
-  devise_for :people
+  devise_for :people, :controllers => { :sessions => "sessions"}
 
   # devise_for :people
+
+  match '/interaction_logs/service' => 'log_service#log', :via => :post
 
   resources :interaction_logs
 
