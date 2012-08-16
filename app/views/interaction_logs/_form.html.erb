@@ -13,11 +13,13 @@
 
   <div class="field">
     <%= f.label :person %><br />
-    <%= f.text_field :person %>
+    <%= f.select :person_id, Person.all.collect {|c| [ c.firstName, c.id ] } %>
+    <!-- <%= f.text_field :person %> -->
   </div>
   <div class="field">
     <%= f.label :logType %><br />
-    <%= f.text_field :logType %>
+    <%= f.select :logType_id, LogType.all.collect {|c| [ c.name, c.id ] } %>
+    <!-- <%= f.text_field :logType %> -->
   </div>
   <div class="field">
     <%= f.label :time %><br />
