@@ -72,8 +72,13 @@
 	* Type
 	* Time
 	* Details
-	* rails generate scaffold InteractionLog person:belongs_to logType:references time:time details:text
+	* Application
+	* rails generate scaffold InteractionLog person:belongs_to logType:references time:time details:text application:belongs_to
 
 1. LogType
 	* name
 	* rails generate scaffold LogType name:string 
+
+1. Application
+	* name
+	* rails generate scaffold Application name:string
