@@ -120,7 +120,7 @@ Devise.setup do |config|
   # an one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
   #config.email_regexp = /\A[^@]+@[^@]+\z/
-  config.email_regexp = /a/
+  # config.email_regexp = /a/
 
   #email regex to be used for password /[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,4}/i
 
