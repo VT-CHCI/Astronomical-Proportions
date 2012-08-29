@@ -18,10 +18,10 @@
 	<meta name="viewport" content="width=device-width">
 
 	<style>
-	body {
-	  padding-top: 60px;
-	  padding-bottom: 40px;
-	}
+		body {
+		  padding-top: 60px;
+		  padding-bottom: 40px;
+		}
 	</style>
 </head>
 <body>
@@ -31,6 +31,9 @@
 			<%= link_to "Sign out", destroy_person_session_path %>
 		<% else %>
 			<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
+			<% if cookies["last_user_id"] %>
+				<span id="current_person_id" class="hidden"><%= cookies["last_user_id"] %></span>
+			<% end %>
 		<% end %>
 	</div>
 	<p class="notice"><%= notice %></p>
