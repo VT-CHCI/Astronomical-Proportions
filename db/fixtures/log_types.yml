@@ -1,8 +1,8 @@
 begin:
-	name: "Begin Interaction"
+    name: "Begin Interaction"
 
 select:
-	name: "Selection"
+    name: "Selection"
 
 action:
-	name: "Action"
+    name: "Action"
