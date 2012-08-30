@@ -9,7 +9,7 @@
 
 	<title>Scale It!</title>
 
-	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<meta name="description" content="">
@@ -25,20 +25,22 @@
 	</style>
 </head>
 <body>
-	<div id="user_nav">
-		<% if person_signed_in? %>
-			Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
-			<%= link_to "Sign out", destroy_person_session_path %>
-		<% else %>
-			<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
-			<% if cookies["last_user_id"] %>
-				<span id="current_person_id" class="hidden"><%= cookies["last_user_id"] %></span>
+	<div id="main">
+		<div id="user_nav">
+			<% if person_signed_in? %>
+				Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
+				<%= link_to "Sign out", destroy_person_session_path %>
+			<% else %>
+				<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
+				<% if cookies["last_person_id"] %>
+					<span id="last_person_id" class="hidden"><%= cookies["last_person_id"] %></span>
+				<% end %>
 			<% end %>
-		<% end %>
+		</div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+		<%= yield %>
 	</div>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-<%= yield %>
 
 </body>
 </html>

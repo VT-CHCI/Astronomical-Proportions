@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
 */
+table {
+	border-spacing: 10px;
+}
+
+#main {
+	padding: 10px;
+}
