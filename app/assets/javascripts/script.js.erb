@@ -137,15 +137,15 @@ function scale(dimension, a, b) {
 		}
 
 		function respFraction(a, b, factor, dimension) {
-			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is 1/" + factor + " (" + 1/factor + ") of the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about 1/" + factor + " (" + (1/factor).toFixed(2) + ") of the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
 		}
 
 		function respSmaller(a, b, factor, dimension) {
-			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is " + factor + " times smaller than the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about " + factor + " times smaller than the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
 		}
 
 		function respEqual(a, b, dimension) {
-			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is equal to the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
+			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is about equal to the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
 		}		
 
 		var result = "";
@@ -166,20 +166,20 @@ function scale(dimension, a, b) {
 
 			if (factor < 1) {
 				result += '<span id="expl0" class="scaleExplanation">';
-				result += respSmaller(right, left, Math.round(1/factor), dimension);
+				result += respSmaller(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span><span id="expl1" class="scaleExplanation hidden">';
-				result += respFraction(right, left, Math.round(1/factor), dimension);
+				result += respFraction(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
-				result += respLarger(right, left, Math.round(1/factor), dimension);
+				result += respLarger(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span>';
 			}
 			else {
 				result += '<span id="expl0" class="scaleExplanation">';
-				result += respLarger(left, right, Math.round(factor), dimension);
+				result += respLarger(left, right, (factor).toFixed(2), dimension);
 				result += '</span><span id="expl1" class="scaleExplanation hidden">';
-				result += respFraction(left, right, Math.round(factor), dimension);
+				result += respFraction(left, right, (factor).toFixed(2), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
-				result += respSmaller(left, right, Math.round(factor), dimension);
+				result += respSmaller(left, right, (factor).toFixed(2), dimension);
 				result += '</span>';
 			}
 		}
@@ -246,9 +246,12 @@ function sendLog (logInfoPairs) {
 				log["person_id"] = p_id.text();
 			}
 		}
+		else if ($("#last_person_id").length == 1) {
+			log["unknown_user_details"] = $("#last_person_id").text();
+		}
 		logs.push(log);
 	}
-	$.post("http://localhost:3000/interaction_logs/service", 
+	$.post("http://astronomical-proportions.dev/interaction_logs/service", 
 		{"logs":logs, "application":"Astronomical Proportions"}, 
 		function(data, textStatus, jqXHR){
 			console.log("in my callback");
