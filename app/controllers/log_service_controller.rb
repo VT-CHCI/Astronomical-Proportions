@@ -19,11 +19,11 @@ class LogServiceController < ActionController::Base
         @interaction_log.time = DateTime.now
       end
       if not @interaction_log.person_id
-        # if cookies[:last_user_id]
-        #   @interaction_log.unknown_user_details = "last_user_id: " + cookies[:last_user_id]
-        # else
+        if @interaction_log.unknown_user_details
+          @interaction_log.unknown_user_details += " request.remote_ip: " + request.remote_ip
+        else
           @interaction_log.unknown_user_details = "request.remote_ip: " + request.remote_ip
-        # end
+        end
       end
       if not @interaction_log.save
         failures.push(@interaction_log.details)
