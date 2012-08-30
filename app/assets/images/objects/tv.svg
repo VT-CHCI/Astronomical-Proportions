@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="661.39044"
+   height="540.91589"
+   id="svg2"
+   inkscape:label="Pozadí"
+   sodipodi:version="0.32"
+   inkscape:version="0.46dev+devel"
+   sodipodi:docbase="C:\Documents and Settings\Šárka\Plocha\SVG\12) Elektrické spotřebiče"
+   sodipodi:docname="Machovka_TV.svg"
+   inkscape:export-filename="C:\joanna\Gfx\drawings_vector\admin\crop\Machovka_TV.png"
+   inkscape:export-xdpi="33.338856"
+   inkscape:export-ydpi="33.338856"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.0">
+  <defs
+     id="defs2208" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.90956839"
+     inkscape:cx="330.69522"
+     inkscape:cy="270.45795"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1024"
+     inkscape:window-height="703"
+     inkscape:window-x="132"
+     inkscape:window-y="63"
+     showgrid="false" />
+  <metadata
+     id="metadata2211">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Televize</dc:title>
+        <dc:date>23.11.2006</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Sarka Slukova</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>ZS a MS Machovo namesti</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:language>Cz</dc:language>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>televize</rdf:li>
+            <rdf:li>television</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <cc:license
+           rdf:resource="http://web.resource.org/cc/PublicDomain" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://web.resource.org/cc/PublicDomain">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-48.845709,-269.19889)">
+    <g
+       id="g8280"
+       transform="translate(-3.912127,0)">
+      <path
+         sodipodi:nodetypes="ccccc"
+         id="rect3969"
+         d="M 86.624597,303.97834 L 676.76817,303.42534 L 675.68081,690.99995 L 86.624597,690.99995 L 86.624597,303.97834 z"
+         style="fill:#231b25;fill-opacity:0.83937839;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000029;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         id="rect4844"
+         d="M 711.39918,269.54889 L 712.73268,657.04359 L 713.51818,722.28087 C 713.42779,722.28087 675.02783,690.57716 675.02783,690.52714 L 675.55444,303.81985 L 711.39918,269.54889 z"
+         style="fill:#dcdcdc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000029;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccc"
+         id="rect4846"
+         d="M 710.75768,269.85037 L 677.27976,304.05432 L 88.864767,303.36233 C 67.939268,297.21036 65.449771,281.68241 53.742273,270.84244 L 710.75768,269.85037 z"
+         style="fill:#dcdcdc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000029;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         y="714.64929"
+         x="317.18799"
+         height="50.875748"
+         width="141.35655"
+         id="rect8370"
+         style="fill:#060000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         style="fill:#dcdcdc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000029;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+         d="M 676.05992,690.17797 L 713.79828,722.01228 L 713.73604,722.12025 L 54.167003,721.42826 L 86.712526,690.97453 L 676.05992,690.17797 z"
+         id="path7481"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#dcdcdc;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70000029;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1"
+         d="M 87.25562,302.77841 L 86.749999,690.16209 L 56.021161,721.58528 C 55.930773,721.58528 53.107836,721.545 53.107836,721.49499 L 53.634442,271.46083 L 87.25562,302.77841 z"
+         id="path7483"
+         sodipodi:nodetypes="cccccc" />
+      <rect
+         style="fill:#060000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.69999999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9245"
+         width="288.54211"
+         height="50.875748"
+         x="245.7699"
+         y="758.88904" />
+    </g>
+  </g>
+</svg>
