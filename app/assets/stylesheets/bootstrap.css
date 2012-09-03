@@ -403,7 +403,7 @@ a:hover {
 }
 
 .container:after {
-  clear: both;
+  /*clear: both;*/
 }
 
 .container-fluid {

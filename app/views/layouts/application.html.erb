@@ -26,17 +26,40 @@
 </head>
 <body>
 	<div id="main">
-		<div id="user_nav">
-			<% if person_signed_in? %>
-				Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
-				<%= link_to "Sign out", destroy_person_session_path %>
-			<% else %>
-				<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
-				<% if cookies["last_person_id"] %>
-					<span id="last_person_id" class="hidden"><%= cookies["last_person_id"] %></span>
-				<% end %>
-			<% end %>
-		</div>
+		<div class="navbar navbar-fixed-top">
+	    <div class="navbar-inner">
+	      <div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
+	        <a class="brand" href="#">Scale It!</a>
+	        <div class="nav-collapse">
+	          <ul class="nav">
+	            <li class="dimensionSelector" id="diameter"><a href="#diameter">Diameter</a></li>
+	            <li class="dimensionSelector" id="length"><a href="#length">Length</a></li>
+	            <li class="dimensionSelector" id="width"><a href="#width">Width</a></li>
+	            <li class="dimensionSelector" id="height"><a href="#height">Height</a></li>
+	            <li class="dimensionSelector" id="area"><a href="#area">Area</a></li>
+	            <li class="dimensionSelector" id="volume"><a href="#volume">Volume</a></li>
+	          </ul>
+	        </div> <!--/.nav-collapse -->
+	      </div> <!-- /.container -->
+	      <div id="user_nav">
+					<% if person_signed_in? %>
+						Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
+						<%= link_to "Sign out", destroy_person_session_path %>
+					<% else %>
+						<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
+						<% if cookies["last_person_id"] %>
+							<span id="last_person_id" class="hidden"><%= cookies["last_person_id"] %></span>
+						<% end %>
+					<% end %>
+				</div>
+	    </div> <!-- /.navbar-inner -->
+	  </div> <!-- /.navbar-fixed-top -->
+		
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 		<%= yield %>

@@ -18,3 +18,13 @@ table {
 #main {
 	padding: 10px;
 }
+
+#user_nav {
+  float:right;
+  margin-right: 15px;
+  line-height: 3;
+}
+
+#user_nav a {
+  color: white;
+}
