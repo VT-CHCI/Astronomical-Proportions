@@ -195,33 +195,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/items/_form.html.erb",
-			"settings":
-			{
-				"buffer_size": 1401,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/items/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 97,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "/*\n * This is a manifest file that'll be compiled into application.css, which will include all the files\n * listed below.\n *\n * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,\n * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.\n *\n * You're free to add application-wide styles to this file and they'll appear at the top of the\n * compiled file, but it's generally better to create a new file per style scope.\n *\n *= require_self\n *= require_tree .\n*/\ntable {\n	border-spacing: 10px;\n}\n\n#main {\n	\n}",
-			"file": "app/assets/stylesheets/application.css",
-			"file_size": 577,
-			"file_write_time": 1346344976000000,
-			"settings":
-			{
-				"buffer_size": 590,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -271,9 +244,15 @@
 	},
 	"file_history":
 	[
-		"/Users/tgm/dev/scaling-dimensions/scaling-dimensions.sublime-project",
-		"/Users/tgm/dev/scaling-dimensions/app/assets/stylesheets/bootstrap.css",
+		"/Users/tgm/dev/scaling-dimensions/app/views/home/index.html.erb",
+		"/Users/tgm/dev/scaling-dimensions/app/views/layouts/application.html.erb",
+		"/Users/tgm/dev/scaling-dimensions/Astronomical Proportions.sublime-project",
 		"/Users/tgm/dev/scaling-dimensions/app/views/items/new.html.erb",
+		"/Users/tgm/dev/scaling-dimensions/app/views/items/_form.html.erb",
+		"/Users/tgm/dev/scaling-dimensions/app/assets/stylesheets/application.css",
+		"/Users/tgm/dev/scaling-dimensions/app/assets/stylesheets/bootstrap.css",
+		"/Users/tgm/dev/scaling-dimensions/app/assets/stylesheets/bootstrap.min.css",
+		"/Users/tgm/dev/scaling-dimensions/scaling-dimensions.sublime-project",
 		"/Users/tgm/dev/scaling-dimensions/config/environments/development.rb",
 		"/Users/tgm/dev/scaling-dimensions/app/assets/javascripts/script.js.erb",
 		"/Users/tgm/dev/The-Platypus-Project/app/assets/javascripts/script.js",
@@ -281,12 +260,9 @@
 		"/Users/tgm/dev/The-Platypus-Project/app/controllers/log_sender_controller.rb",
 		"/Users/tgm/dev/scaling-dimensions/.powrc",
 		"/Users/tgm/dev/scaling-dimensions/app/views/items/index.html.erb",
-		"/Users/tgm/dev/scaling-dimensions/app/assets/stylesheets/application.css",
 		"/Users/tgm/dev/The-Platypus-Project/.powrc",
 		"/Users/tgm/dev/scaling-dimensions/app/controllers/sessions_controller.rb",
-		"/Users/tgm/dev/scaling-dimensions/app/views/layouts/application.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/app/controllers/log_service_controller.rb",
-		"/Users/tgm/dev/scaling-dimensions/Astronomical Proportions.sublime-project",
 		"/Users/tgm/dev/scaling-dimensions/app/models/interaction_log.rb",
 		"/Users/tgm/dev/scaling-dimensions/.gitignore",
 		"/Users/tgm/dev/scaling-dimensions/Gemfile",
@@ -395,10 +371,7 @@
 		"/Users/tgm/dev/scaling-dimensions/app/views/devise/registrations/new.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/config/routes.rb",
 		"/Users/tgm/dev/scaling-dimensions/db/migrate/20120814160700_add_unknown_user_to_interaction_logs.rb",
-		"/Users/tgm/dev/scaling-dimensions/app/controllers/courses_controller.rb",
-		"/Users/tgm/dev/scaling-dimensions/app/controllers/applications_controller.rb",
-		"/Users/tgm/dev/scaling-dimensions/db/fixtures/applications.yml",
-		"/Users/tgm/dev/scaling-dimensions/app/views/interaction_logs/_form.html.erb"
+		"/Users/tgm/dev/scaling-dimensions/app/controllers/courses_controller.rb"
 	],
 	"find":
 	{
@@ -406,7 +379,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/tgm/dev/scaling-dimensions,/Users/tgm/dev/The-Platypus-Project",
@@ -429,6 +402,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"clear",
 			"localhost:3000/interaction_logs/service",
 			"localhost:3000",
 			"localhost",
@@ -555,8 +529,7 @@
 			"generate model",
 			"object",
 			"class",
-			"img",
-			"attr"
+			"img"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -603,86 +576,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/items/_form.html.erb",
-					"settings":
-					{
-						"buffer_size": 1401,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/items/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 97,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								55,
-								55
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/assets/stylesheets/application.css",
-					"settings":
-					{
-						"buffer_size": 590,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								588,
-								588
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
