@@ -9,7 +9,7 @@ namespace :db do
     end
     #add in the image file for the default data
     for item in Item.find(:all)
-      item.filename.store!(File.open(File.join(Rails.root, "app/assets/images/objects/" + item.name.gsub(/ /,'').downcase + ".svg")))
+      item.filename.store!(File.open(File.join(Rails.root, "assets/images/objects/" + item.name.gsub(/ /,'').downcase + ".svg")))
       item.save!
     end
   end
