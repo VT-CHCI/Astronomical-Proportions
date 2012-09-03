@@ -54,3 +54,53 @@ Tennisball:
   volume: 1.57479139e-4
   person_id: 3
 
+House:
+  name: "house"
+  article: "a"
+  length: 10
+  width:  10
+  height: 7
+  area: 100
+  volume: 700
+  person_id: 4
+
+Henrico:
+  name: "Henrico County"
+  article: ""
+  length: 50583
+  width:  21507
+  area: 635000000
+  person_id: 4
+
+Virginia:
+  name: "Virginia"
+  article: ""
+  length: 690000
+  width:  320000
+  area: 110785670000
+  person_id: 4
+
+Canada:
+  name: "Canada"
+  article: ""
+  length: 4490000
+  width:  3728000
+  area: 9.98467e+12
+  person_id: 4
+
+US:
+  name: "United States"
+  article: "the"
+  length: 4659000
+  width:  2632010
+  area: 9.826675e+12
+  person_id: 4
+
+Richmond:
+  name: "Richmond"
+  article: ""
+  length: 18824.2
+  width: 16884.2
+  area: 1556000000
+  person_id: 4
+
