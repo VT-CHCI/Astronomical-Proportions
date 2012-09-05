@@ -1,15 +1,19 @@
+require 'pathname'
 namespace :db do
   desc "This loads the development data."
   task :seed => :environment do
     require 'active_record/fixtures'
+    puts "RAILS_ROOT: " + RAILS_ROOT
     Dir.glob(RAILS_ROOT + '/db/fixtures/*.yml').each do |file|
       base_name = File.basename(file, '.*')
       puts "Loading #{base_name}..."
       ActiveRecord::Fixtures.create_fixtures('db/fixtures', base_name)
     end
     #add in the image file for the default data
+    rr = Pathname.new(RAILS_ROOT).expand_path
+    puts "rr: " + rr
     for item in Item.find(:all)
-      item.filename.store!(File.open(RAILS_ROOT + "app/assets/images/objects/" + item.name.gsub(/ /,'').downcase + ".svg"))
+      item.filename.store!(File.open("/app/assets/images/objects/" + item.name.gsub(/ /,'').downcase + ".svg"))
       item.save!
     end
   end
