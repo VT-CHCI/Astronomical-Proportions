@@ -11,7 +11,7 @@ namespace :db do
     end
     #add in the image file for the default data
     rr = Pathname.new(RAILS_ROOT).expand_path
-    puts "rr: " + rr
+    puts "rr: " + rr.to_s
     for item in Item.find(:all)
       item.filename.store!(File.open("/app/assets/images/objects/" + item.name.gsub(/ /,'').downcase + ".svg"))
       item.save!
