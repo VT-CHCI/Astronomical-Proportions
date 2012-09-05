@@ -60,6 +60,9 @@ $(document).ready(function(){
 					sendLog([[log_types["action"], "animating with left object: " + $("#list1 dd.selectedObject img").attr("attrname") + " and right object: " + $("#list2 dd.selectedObject img").attr("attrname")]])
 					$("#leftObject").append($("#list1 dd.selectedObject img").clone());
 					$("#rightObject").append($("#list2 dd.selectedObject img").clone());
+					$("#leftObject img").removeClass("iosListImage");
+					$("#rightObject img").removeClass("iosListImage");
+
 					scale(urlDimension, $("#leftObject img"), $("#rightObject img"));
 					$("#animateObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 
@@ -188,6 +191,8 @@ function scale(dimension, a, b) {
 		$("#verboseDescription").append(result);
 	}
 	var factor = parseFloat(a.attr("attr"+dimension))/parseFloat(b.attr("attr"+dimension));
+
+
 	if (parseFloat(b.attr("attr"+dimension)) > parseFloat(a.attr("attr"+dimension))) {
 		window.setTimeout(
 			function () {
