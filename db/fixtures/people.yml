@@ -9,8 +9,8 @@ tatar:
     id: 2
     firstName: "Deborah"
     lastName: "Tatar"
-    email: "tgm+deborah@xyz.edu"
-    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
+    email: "deborah"
+    encrypted_password: "$2a$10$ttqvUv7z62p0DPgrZN6LpOL4rCe/a0CxLShZM6mKJiVpKxaPLOyqy"
 
 steve:
     id: 3
