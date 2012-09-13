@@ -13,7 +13,7 @@
                 <dt><%= person.firstName %></dt>
                 <% objs.each do |item| %>
                   <dd><p><%= item.name %></p>
-                  <img class="iosListImage" width="<%= ScalingDimensions::Application::DEFAULT_ITEM_WIDTH %>" attrvolume="<%= item.volume %>" attrarea="<%= item.area %>" attrheight="<%= item.height %>" attrwidth="<%= item.width %>" attrlength="<%= item.length %>" attrdiameter="<%= item.diameter %>" attrarticle="<%= item.article %>" attrname="<%= item.name %>" src="<%= item.filename %>"></dd>
+                  <img class="iosListImage" width="<%= ScalingDimensions::Application::DEFAULT_ITEM_WIDTH %>" attrvolume="<%= item.volume %>" attrarea="<%= item.area %>" attrheight="<%= item.height %>" attrwidth="<%= item.width %>" attrlength="<%= item.length %>" attrdiameter="<%= item.diameter %>" attrsurface_area="<%= item.surface_area %>" attrarticle="<%= item.article %>" attrname="<%= item.name %>" src="<%= item.filename %>"></dd>
                 <% end %>
               </dl>
             <% end %>

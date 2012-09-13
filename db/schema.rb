@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814160700) do
+ActiveRecord::Schema.define(:version => 20120913203715) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -52,8 +52,9 @@ ActiveRecord::Schema.define(:version => 20120814160700) do
     t.float    "area"
     t.float    "volume"
     t.integer  "person_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.float    "surface_area"
   end
 
   add_index "items", ["person_id"], :name => "index_items_on_person_id"

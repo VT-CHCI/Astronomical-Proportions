@@ -134,21 +134,20 @@ function scale(dimension, a, b) {
 		// * The diameter of L is 7 times larger than the diameter of S. 	The diameter of S is 7 times smaller than the diameter of L.
 		// * The diameter of S is 1/7 of the diameter of L.              	The diameter of S is 1/7 of the diameter of L.
 		// * The diameter of S is 7 times smaller than the diameter of L. The diameter of L is 7 times larger than the diameter of S.
-
 		function respLarger(a, b, factor, dimension) {
-			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is " + factor + " times larger than the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
+			return "The " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is " + factor + " times larger than the " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
 		}
 
 		function respFraction(a, b, factor, dimension) {
-			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about 1/" + factor + " (" + (1/factor).toFixed(2) + ") of the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+			return "The " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about 1/" + factor + " (" + (1/factor).toFixed(2) + ") of the " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
 		}
 
 		function respSmaller(a, b, factor, dimension) {
-			return "The " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about " + factor + " times smaller than the " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+			return "The " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is about " + factor + " times smaller than the " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
 		}
 
 		function respEqual(a, b, dimension) {
-			return "The " + dimension + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is about equal to the " + dimension + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
+			return "The " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is about equal to the " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
 		}		
 
 		var result = "";
