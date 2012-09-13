@@ -4,11 +4,11 @@ class LogServiceController < ActionController::Base
 
 	#POST /interaction_logs/service
   def log
-    puts "\n\n\n\n\n\n\n\n\n\n===========\n\n\n\n\n\n\n\n in log"
-    puts params[:logs]
-    puts params
-    puts request.remote_ip
-    puts "\n\n\n\n\n\n\n\n\n\n===========\n\n\n\n\n\n\n\n out log"
+    # puts "\n\n\n\n\n\n\n\n\n\n===========\n\n\n\n\n\n\n\n in log"
+    # puts params[:logs]
+    # puts params
+    # puts request.remote_ip
+    # puts "\n\n\n\n\n\n\n\n\n\n===========\n\n\n\n\n\n\n\n out log"
     failures = []
     params[:logs].each do |idx, log|
       if params[:application]
