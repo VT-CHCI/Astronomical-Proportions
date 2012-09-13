@@ -6,6 +6,6 @@ class AddUnknownUserToInteractionLogs < ActiveRecord::Migration
 	end
 
 	def self.down
-		remove_column :unknown_user_details
+		remove_column :interaction_logs, :unknown_user_details
 	end
 end
