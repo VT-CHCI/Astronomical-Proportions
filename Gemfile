@@ -46,3 +46,4 @@ gem 'jquery-rails'
 #adding image uploads via carrierwacve
 gem 'carrierwave'
 
+gem 'taps'
