@@ -150,6 +150,11 @@ function scale(dimension, a, b) {
 			return "The " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + " is about equal to the " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + ".";
 		}		
 
+		function respPercent(a, b, factor, dimension) {
+			return "The " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is " + (1/factor).toFixed(2)*100 + "% of the " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+		}
+
+
 		var result = "";
 		if (Math.round(factor) == 1 ) {
 			result += '<span id="expl0" class="scaleExplanation">';
@@ -160,9 +165,9 @@ function scale(dimension, a, b) {
 		else {
 			$("#reverseDescription").show();
 			$("#reverseDescription").click(function() {
-				$("#expl"+displayedExp++%3).toggleClass("hidden");
-				$("#expl"+displayedExp%3).toggleClass("hidden");
-				clog("changed to expl "+displayedExp%3);
+				$("#expl"+displayedExp++%4).toggleClass("hidden");
+				$("#expl"+displayedExp%4).toggleClass("hidden");
+				clog("changed to expl "+displayedExp%4);
 				sendLog([[log_types["action"], "explanation changed to: "+$(".scaleExplanation:visible").text()]]);
 			});
 
@@ -173,6 +178,8 @@ function scale(dimension, a, b) {
 				result += respFraction(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
 				result += respLarger(right, left, (1/factor).toFixed(2), dimension);
+				result += '</span><span id="expl3" class="scaleExplanation hidden">';
+				result += respPercent(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span>';
 			}
 			else {
@@ -182,6 +189,8 @@ function scale(dimension, a, b) {
 				result += respFraction(left, right, (factor).toFixed(2), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
 				result += respSmaller(left, right, (factor).toFixed(2), dimension);
+				result += '</span><span id="expl3" class="scaleExplanation hidden">';
+				result += respPercent(right, left, (1/factor).toFixed(2), dimension);
 				result += '</span>';
 			}
 		}
@@ -191,7 +200,7 @@ function scale(dimension, a, b) {
 	}
 	var factor = parseFloat(a.attr("attr"+dimension))/parseFloat(b.attr("attr"+dimension));
 
-
+	//Scaling Section
 	if (parseFloat(b.attr("attr"+dimension)) > parseFloat(a.attr("attr"+dimension))) {
 		window.setTimeout(
 			function () {
