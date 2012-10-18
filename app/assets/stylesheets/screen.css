@@ -26,7 +26,7 @@ ul#selectDimension {
 	margin: 0 ! important;
 	margin-top:	40px;
 	border: 1px solid black;
-	width: 430px ! important;
+	width: 330px ! important; /*430*/
 	height:	550px ! important;
 }
 
@@ -35,7 +35,7 @@ footer {
 }
 
 .listContainer dd {
-	height: 255px;
+	height: 150px;/*255*/
 	padding: 5px;
 }
 
@@ -56,7 +56,7 @@ dd.selectedObject:hover {
 }
 
 .fakeHeader, dt {
-	width: 402px ! important;
+	width: 302px ! important;
 }
 
 /*.hidden {
@@ -93,4 +93,12 @@ dd.selectedObject:hover {
 
 #description img {
 	margin-right: 20px;
+}
+
+.iosListImage {
+	width: 150px; /*250px*/
+}
+
+.objectAnimation img {
+	width: 200px;
 }
