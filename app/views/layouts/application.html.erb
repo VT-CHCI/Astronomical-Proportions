@@ -22,6 +22,13 @@
 		  padding-top: 60px;
 		  padding-bottom: 40px;
 		}
+
+		.affix {
+          position: fixed;
+          top: 20px;
+          left: auto;
+          right: auto;
+        }
 	</style>
 </head>
 <body>
@@ -34,19 +41,20 @@
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
 	        </a>
-	        <a class="brand" href="#">Astronomical Proportions</a>
+	        <a class="brand" id="home" href="#">Astronomical Proportions</a>
 	        <div class="nav-collapse">
 	          <ul class="nav">
-	            <li class="dimensionSelector" id="diameter"><a href="#diameter">Diameter</a></li>
-	            <li class="dimensionSelector" id="surface_area"><a href="#surface_area">Surface Area</a></li>
-	            <li class="dimensionSelector" id="length"><a href="#length">Length</a></li>
-	            <li class="dimensionSelector" id="width"><a href="#width">Width</a></li>
-	            <li class="dimensionSelector" id="height"><a href="#height">Height</a></li>
-	            <li class="dimensionSelector" id="area"><a href="#area">Area</a></li>
-	            <li class="dimensionSelector" id="volume"><a href="#volume">Volume</a></li>
+	            <!-- <li class="dimensionSelector" id="diameter"><a href="#diameter">Diameter</a></li> -->
+	            <!-- <li class="dimensionSelector" id="surface_area"><a href="#surface_area">Surface Area</a></li> -->
+	            <!-- <li class="dimensionSelector" id="length"><a href="#length">Length</a></li> -->
+	            <!-- <li class="dimensionSelector" id="width"><a href="#width">Width</a></li> -->
+	            <!-- <li class="dimensionSelector" id="height"><a href="#height">Height</a></li> -->
+	            <!-- <li class="dimensionSelector" id="area"><a href="#area">Area</a></li> -->
+	            <!-- <li class="dimensionSelector" id="volume"><a href="#volume">Volume</a></li> -->
 	          </ul>
 	        </div> <!--/.nav-collapse -->
 	      </div> <!-- /.container -->
+	      <!-- left sidebar -->
 	      <div id="user_nav">
 					<% if person_signed_in? %>
 						Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
@@ -60,13 +68,46 @@
 				</div>
 	    </div> <!-- /.navbar-inner -->
 	  </div> <!-- /.navbar-fixed-top -->
+
+		<!-- Example row of columns -->
+	    <div class="row-fluid">
+		  <!-- left sidebar -->
+	     	<div class="span2">
+	            <!-- <h2>Left Nav</h2> -->
+	            <ul class="nav nav-list" data-spy="affix">
+	                <li class="dimensionSelector" id="li-diameter"><a href="#diameter">Diameter</a></li>
+		            <li class="dimensionSelector" id="li-surface_area"><a href="#surface_area">Surface Area</a></li>
+		            <li class="dimensionSelector" id="li-length"><a href="#length">Length</a></li>
+		            <li class="dimensionSelector" id="li-width"><a href="#width">Width</a></li>
+		            <li class="dimensionSelector" id="li-height"><a href="#height">Height</a></li>
+		            <li class="dimensionSelector" id="li-area"><a href="#area">Area</a></li>
+		            <li class="dimensionSelector" id="li-volume"><a href="#volume">Volume</a></li>
+	            </ul>
+	        </div>
+
+	        <div class="span8">
+	        	<%= yield %>
+	        </div>
+
+	        <div class="span2">
+	          <div class="sidenav" data-spy="affix">
+	          	<a href="#" id="Analogy">Analogy Mode</a>
+	          	<br /><br />
+	            <a href="#" id="Prediction">Prediction Mode</a>
+	          </div>
+	        </div>
+	    </div>
+       <!--  <div class="hidden" id="dimension">
+
+        </div> -->
+        <!-- /left sidebar -->
 		<% if flash[:notice] %>
 			<p class="notice"><%= notice %></p>
 		<% end %>
 		<% if flash[:alert] %>
 			<p class="alert"><%= alert %></p>
 		<% end %>
-		<%= yield %>
+		
 	</div>
 
 </body>

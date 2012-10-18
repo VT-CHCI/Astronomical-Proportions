@@ -23,12 +23,11 @@ ul#selectDimension {
 }
 
 .listWrapper {
-	height: 500px ! important;
 	margin: 0 ! important;
 	margin-top:	40px;
 	border: 1px solid black;
-	width: 450px ! important;
-	height:	600px ! important;
+	width: 430px ! important;
+	height:	550px ! important;
 }
 
 footer {
@@ -57,7 +56,7 @@ dd.selectedObject:hover {
 }
 
 .fakeHeader, dt {
-	width: 423px ! important;
+	width: 402px ! important;
 }
 
 /*.hidden {

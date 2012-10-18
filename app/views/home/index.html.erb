@@ -3,9 +3,7 @@
 <p class="alert"><%= alert %></p>
 <p>Find me in app/views/home/index.html.erb</p> -->
 
-  <div class="container">
-    <div class="row">
-      <div id="chooseObjects" class="span12">
+      <div id="chooseObjects">
         <div id="leftList" class ="left">
           <div id="list1" class="listContainer">
             <% @itemsDict.each do |person, objs| %>
@@ -36,8 +34,6 @@
           <%= image_tag "arrows-double-reversed.svg", :id=>"reverseDescription",  :width=>"50" %>
           <p id="verboseDescription"></p>
         </div>
-      </div>
-    </div>
     <footer>
       <!-- <p>&copy; Company 2012</p> -->
     </footer>

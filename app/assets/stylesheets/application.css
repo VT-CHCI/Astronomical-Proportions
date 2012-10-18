@@ -28,3 +28,7 @@ table {
 #user_nav a {
   color: white;
 }
+
+.affix {
+    position: fixed; 
+}

@@ -9,7 +9,6 @@ var log_types = { //check these values against the order in db/fixtures/log_type
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
-	
 
 	$("#animateObjects").hide();
 
@@ -22,10 +21,16 @@ $(document).ready(function(){
 		clog("started with no dimension, defaulted to " + DEFAULT_LOCATION);
 	}
 	else {
-		$("#"+urlDimension).toggleClass("active");
+		$("#"+urlDimension).addClass("active");
 		sendLog([[log_types["begin"], "started with dimension: " + urlDimension]]);
 		clog("started with dimension: " + urlDimension);
 	}
+
+	$("#home").click(function(){
+		if($("#chooseObjects").is(":hidden")) {
+			$("#chooseObjects").trigger("activate");
+		}
+	});
 
 	$("#chooseObjects").bind("objectsLoaded", function() {
 
@@ -72,6 +77,7 @@ $(document).ready(function(){
 		
 		$("#chooseObjects").bind("dimensionChosen", function() {
 			$(".listContainer dd img").each(function(){
+				// This filters the items in the list to only show the ones with the dimension chosen.
 				if ($(this).attr("attr"+urlDimension)) {
 					$(this).parent().show();
 					$(this).parent().parent().show();
@@ -79,6 +85,8 @@ $(document).ready(function(){
 					$(this).parent().hide();
 				}
 			});
+
+			// If all the items for a given person are hidden, hide the name
 			$(".listContainer dl").each(function(){
 				if ($(this).find("img:visible").length == 0) {
 					$(this).hide();
@@ -95,9 +103,9 @@ $(document).ready(function(){
 
 
 	$(".nav li").click(function() {
-		urlDimension = $(this).attr("id");
-		clog("changed dimension to: " + $(this).attr("id"));
-		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id")]]);
+		urlDimension = $(this).attr("id").substring(3);
+		clog("changed dimension to: " + $(this).attr("id").substring(3));
+		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id").substring(3)]]);
 		$(".nav li.active").toggleClass("active");
 		$(this).toggleClass("active");
 		if ($("#chooseObjects").is(":hidden")) {
@@ -126,7 +134,8 @@ $(document).ready(function(){
 		$(".scaleExplanation").addClass("hidden");
 		$("#expl0").removeClass("hidden");
 	});
-});
+
+}); //Closes document ready
 
 function scale(dimension, a, b) {
 	function verboseDescription(left, right, factor) {
