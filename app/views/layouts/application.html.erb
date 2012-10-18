@@ -74,8 +74,8 @@
 		  <!-- left sidebar -->
 	     	<div class="span2">
 	            <!-- <h2>Left Nav</h2> -->
-	            <ul class="nav nav-list" data-spy="affix">
-	                <li class="dimensionSelector" id="li-diameter"><a href="#diameter">Diameter</a></li>
+	            <ul class="nav nav-list" id="dimension-list" data-spy="affix">
+	              <li class="dimensionSelector active" id="li-diameter"><a href="#diameter">Diameter</a></li>
 		            <li class="dimensionSelector" id="li-surface_area"><a href="#surface_area">Surface Area</a></li>
 		            <li class="dimensionSelector" id="li-length"><a href="#length">Length</a></li>
 		            <li class="dimensionSelector" id="li-width"><a href="#width">Width</a></li>
@@ -90,11 +90,11 @@
 	        </div>
 
 	        <div class="span2">
-	          <div class="sidenav" data-spy="affix">
-	          	<a href="#" id="Analogy">Analogy Mode</a>
-	          	<br /><br />
-	            <a href="#" id="Prediction">Prediction Mode</a>
-	          </div>
+	          <ul class="nav nav-list" id="selector-list" data-spy="affix">
+	          	<li class="modeSelector active" id="li-compare"><a href="#">Compare Mode</a></li>
+	          	<li class="modeSelector" id="li-analogy"><a href="#">Analogy Mode</a></li>
+	          	<li class="modeSelector" id="li-prediction"><a href="#">Prediction Mode</a></li>
+	          </ul>
 	        </div>
 	    </div>
        <!--  <div class="hidden" id="dimension">
@@ -110,5 +110,8 @@
 		
 	</div>
 
+	    <footer>
+       <p>&nbsp;&nbsp;&nbsp;&copy; Virginia Tech - Center for Human-Computer Interaction 2012</p>
+      </footer>
 </body>
 </html>

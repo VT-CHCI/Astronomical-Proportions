@@ -11,6 +11,7 @@ gem 'rails', '3.2.2'
 gem 'pg' #for heroku
 
 gem 'devise'
+gem 'font-awesome-rails'
 
 
 # Gems used only for assets and not required

@@ -10,8 +10,11 @@ $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
 
+  //Initiliaze to choose objects
+   
 	$("#animateObjects").hide();
-
+  $("#analogyObjects").hide();
+  $("#prdictObjects").hide();
 
 	var urlDimension = location.hash.replace("#","");
 	if (urlDimension.length == 0) {
@@ -60,6 +63,12 @@ $(document).ready(function(){
 					$(this).toggleClass("selectedObject");
 				}
 				if ($(".selectedObject").length == 2) {
+					//If compare mode activated, execute the enclosed
+					if($("#selector-list li.active").attr("id") == "li-compare") {
+					//Clear List
+					$("#leftObject").empty();
+					$("#rightObject").empty();
+
 					clog("from list 1, user selected: " + $("#list1 dd.selectedObject img").attr("attrname"));
 					clog("from list 2, user selected: " + $("#list2 dd.selectedObject img").attr("attrname"));
 					sendLog([[log_types["action"], "animating with left object: " + $("#list1 dd.selectedObject img").attr("attrname") + " and right object: " + $("#list2 dd.selectedObject img").attr("attrname")]])
@@ -67,10 +76,31 @@ $(document).ready(function(){
 					$("#rightObject").append($("#list2 dd.selectedObject img").clone());
 					$("#leftObject img").removeClass("iosListImage");
 					$("#rightObject img").removeClass("iosListImage");
+					  scale(urlDimension, $("#leftObject img"), $("#rightObject img"));
+					  $("#animateObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
+				  }
 
-					scale(urlDimension, $("#leftObject img"), $("#rightObject img"));
-					$("#animateObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
+				  //If analogy mode activated, execute the enclosed
+				  if($("#selector-list li.active").attr("id") == "li-analogy") {
+				  	 $("#analogyleftObject").empty();
+					   $("#analogyrightObject").empty();
+				  	 $("#analogyleftObject").append($("#list1 dd.selectedObject img").clone());
+					   $("#analogyrightObject").append($("#list2 dd.selectedObject img").clone());
+					   $("#analogyrightObject img").removeClass("iosListImage");
+				    	$("#analogyrightObject img").removeClass("iosListImage");
+				  	 $("#analogyObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
+				  }
 
+				  //If prediction mode activated, execute the enclosed
+					if($("#selector-list li.active").attr("id") == "li-prediction") {
+						$("#predictionleftObject").empty();
+					   $("#predictionrightObject").empty();
+				  	 $("#predictionleftObject").append($("#list1 dd.selectedObject img").clone());
+					   $("#predictionrightObject").append($("#list2 dd.selectedObject img").clone());
+					   $("#predictionrightObject img").removeClass("iosListImage");
+					   $("#predictionrightObject img").removeClass("iosListImage");
+				  	 $("#predictionObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
+				  }
 				}
 			});
 		});
@@ -102,16 +132,25 @@ $(document).ready(function(){
 
 
 
-	$(".nav li").click(function() {
+	$("#dimension-list li").click(function() {
 		urlDimension = $(this).attr("id").substring(3);
-		clog("changed dimension to: " + $(this).attr("id").substring(3));
-		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id").substring(3)]]);
-		$(".nav li.active").toggleClass("active");
+		clog("changed dimension to: " + $(this).attr("id").substring(3));		
+		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id").substring(3)]]);	
+		$("#dimension-list li.active").toggleClass("active");
 		$(this).toggleClass("active");
 		if ($("#chooseObjects").is(":hidden")) {
 			$("#chooseObjects").trigger("activate");
 		}
 		$("#chooseObjects").trigger("dimensionChosen");
+	});
+
+
+	$("#selector-list li").click(function() {
+		$("#selector-list li.active").toggleClass("active");
+		$(this).toggleClass("active");
+    if($("#chooseObjects").is(":hidden")) {
+			$("#chooseObjects").trigger("activate");
+		}
 	});
 
 	$("#animateObjects").bind("activate", function(event, data) {
@@ -120,12 +159,23 @@ $(document).ready(function(){
 		$("#reverseDescription").trigger("resetDescriptions");
 	});
 
+
+  $("#analogyObjects").bind("activate", function(event, data) {
+		$("#chooseObjects").toggle();
+		$("#analogyObjects").toggle();
+	});
+
+  $("#predictionObjects").bind("activate", function(event, data) {
+		$("#chooseObjects").toggle();
+		$("#predictionObjects").toggle();
+	});
+
 	$("#chooseObjects").bind("activate", function(event, data) {
 		$("#chooseObjects").toggle();
-		$("#animateObjects").toggle();
+			$("#animateObjects").hide();
+			$("#analogyObjects").hide();
+			$("#predictionObjects").hide();
 		$(".selectedObject").removeClass("selectedObject");
-		$("#leftObject").empty();
-		$("#rightObject").empty();
 		$(".scaleExplanation").toggleClass("hidden");
 	});
 
