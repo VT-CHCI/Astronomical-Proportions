@@ -99,6 +99,19 @@ dd.selectedObject:hover {
 	width: 150px; /*250px*/
 }
 
-.objectAnimation img {
+.objectAnimation img, #analogyObjects img  {
 	width: 200px;
+}
+
+#predictionObjects img {
+	width: 350px;
+	border: 1px solid gray;
+}
+
+.orange {
+	color: #f60;
+}
+
+.maroon {
+	color: #600;
 }

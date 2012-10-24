@@ -11,6 +11,9 @@ gem 'rails', '3.2.2'
 gem 'pg' #for heroku
 
 gem 'devise'
+
+gem 'compass_twitter_bootstrap'
+gem 'compass-rails'
 gem 'font-awesome-rails'
 
 
@@ -27,6 +30,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

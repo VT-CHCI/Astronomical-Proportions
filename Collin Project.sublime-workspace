@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"hi",
+				"hide"
+			],
+			[
+				"right",
+				"rightObject"
+			],
+			[
+				"left",
+				"leftObject"
+			],
+			[
+				"dimen",
+				"dimension-list"
+			],
+			[
 				"hid",
 				"hidden"
 			],
@@ -43,7 +59,7 @@
 			"file": "/C/Users/CJC/CompThink/The-Platypus-Project/Gemfile",
 			"settings":
 			{
-				"buffer_size": 1450,
+				"buffer_size": 1474,
 				"line_ending": "Windows"
 			}
 		},
@@ -56,26 +72,26 @@
 			}
 		},
 		{
-			"file": "/C/Users/CJC/CompThink/The-Platypus-Project/config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 2731,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/script.js.erb",
 			"settings":
 			{
-				"buffer_size": 10421,
+				"buffer_size": 13209,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/c/Users/CJC/CompThink/scaling-dimensions/index.html",
+			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/bootstrap.css",
 			"settings":
 			{
-				"buffer_size": 3303,
+				"buffer_size": 99959,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/application.css.scss",
+			"settings":
+			{
+				"buffer_size": 837,
 				"line_ending": "Windows"
 			}
 		},
@@ -83,7 +99,7 @@
 			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 4475,
+				"buffer_size": 4824,
 				"line_ending": "Windows"
 			}
 		},
@@ -91,26 +107,7 @@
 			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/views/home/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 1749,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "body {\n  background-color: #fff;\n  color: #333;\n  font-family: verdana, arial, helvetica, sans-serif;\n  font-size: 13px;\n  line-height: 18px; }\n\np, ol, ul, td {\n  font-family: verdana, arial, helvetica, sans-serif;\n  font-size: 13px;\n  line-height: 18px; }\n\npre {\n  background-color: #eee;\n  padding: 10px;\n  font-size: 11px; }\n\n  .affix {\n    position: fixed; \n}\n\n// a {\n//   color: #000;\n//   &:visited {\n//     color: #666; }\n//   &:hover {\n//     color: #fff;\n//     background-color: #000; } }\n\ndiv {\n  &.field, &.actions {\n    margin-bottom: 10px; } }\n\n#notice {\n  color: green; }\n\n.field_with_errors {\n  padding: 2px;\n  background-color: red;\n  display: table; }\n\n#error_explanation {\n  width: 450px;\n  border: 2px solid red;\n  padding: 7px;\n  padding-bottom: 0;\n  margin-bottom: 20px;\n  background-color: #f0f0f0;\n  h2 {\n    text-align: left;\n    font-weight: bold;\n    padding: 5px 5px 5px 15px;\n    font-size: 12px;\n    margin: -7px;\n    margin-bottom: 0px;\n    background-color: #c00;\n    color: #fff; }\n  ul li {\n    font-size: 12px;\n    list-style: square; } }\n",
-			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/scaffolds.css.scss",
-			"file_size": 1136,
-			"file_write_time": 129950669284713409,
-			"settings":
-			{
-				"buffer_size": 1074,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/screen.css",
-			"settings":
-			{
-				"buffer_size": 1163,
+				"buffer_size": 2845,
 				"line_ending": "Windows"
 			}
 		}
@@ -142,7 +139,7 @@
 				"Package Control: List Packages"
 			]
 		],
-		"width": 400.0
+		"width": 512.0
 	},
 	"console":
 	{
@@ -159,27 +156,42 @@
 	},
 	"file_history":
 	[
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/items/index.html.erb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/vendor/cache/compass_twitter_bootstrap-2.0.3.gem",
+		"/C/Users/CJC/CompThink/The-Platypus-Project/config/routes.rb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/screen.css",
+		"/C/Users/CJC/Desktop/resizabletest.html",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/scaffolds.css.scss",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/application.css.scss",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/layouts/application.html.erb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/application.js",
+		"/c/Users/CJC/CompThink/scaling-dimensions/Gemfile",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/libs/bootstrap/bootstrap.js",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/home/index.html.erb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/applications/index.html.erb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/index.html",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/jquery-ui.1.9.0.css",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/images/ui-icons_222222_256x240.png",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/uploaders/image_uploader.rb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/interaction_logs.js.coffee",
+		"/c/Users/CJC/CompThink/scaling-dimensions/Gemfile.lock",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/script.js.erb",
+		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/applications.css.scss",
 		"/c/Users/CJC/CompThink/scaling-dimensions/Collin Project.sublime-project",
 		"/c/Users/CJC/CompThink/scaling-dimensions/Astronomical Proportions.sublime-project",
 		"/C/Users/CJC/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
 		"/c/Users/CJC/CompThink/scaling-dimensions/app/controllers/sessions_controller.rb",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/lib/tasks/db.rake",
-		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/applications.css.scss",
 		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/application.css",
-		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/screen.css",
 		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/items.css.scss",
 		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/home.css.scss",
 		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/courses.css.scss",
-		"/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/scaffolds.css.scss",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/app/views/layouts/application.html.erb",
-		"/c/Users/CJC/CompThink/scaling-dimensions/Gemfile",
 		"/c/Users/CJC/CompThink/scaling-dimensions/config/routes.rb",
 		"/c/Users/CJC/CompThink/scaling-dimensions/_files/model.md",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/db/migrate/20120902161941_create_versions.rb",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/db/migrate/20121016225642_create_ratings.rb",
-		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/home/index.html.erb",
 		"/c/Users/CJC/CompThink/scaling-dimensions/db/schema.rb",
-		"/c/Users/CJC/CompThink/scaling-dimensions/app/views/layouts/application.html.erb",
 		"/C/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/script.js.erb",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/Gemfile",
 		"/C/Users/CJC/CompThink/The-Platypus-Project/.git/config",
@@ -268,6 +280,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"show",
+			"glyph",
+			"glyp",
+			"icon",
+			".less",
+			"asset_",
+			"jquery",
+			"animateObjects",
+			"show",
+			"analogy",
+			"#animate",
+			"arrows-double-reversed",
+			"#leftobject",
+			"append",
+			"active",
+			".click",
+			"Virginia",
+			"Human-Computer Interaction 2012",
+			"container",
 			"listcontainer",
 			"css",
 			"\n",
@@ -297,8 +328,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"prediction"
 		],
-		"reverse": true,
+		"reverse": false,
 		"show_context": true,
 		"use_buffer2": false,
 		"whole_word": false,
@@ -307,7 +339,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -323,7 +355,7 @@
 						[
 							[
 								157,
-								0
+								157
 							]
 						],
 						"settings":
@@ -367,15 +399,15 @@
 					"file": "/C/Users/CJC/CompThink/The-Platypus-Project/Gemfile",
 					"settings":
 					{
-						"buffer_size": 1450,
+						"buffer_size": 1474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33,
-								33
+								1092,
+								1092
 							]
 						],
 						"settings":
@@ -383,7 +415,7 @@
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 487.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -409,53 +441,25 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 360.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/CJC/CompThink/The-Platypus-Project/config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								240,
-								240
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/javascripts/script.js.erb",
 					"settings":
 					{
-						"buffer_size": 10421,
+						"buffer_size": 13209,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								239,
-								239
+								6825,
+								6829
 							]
 						],
 						"settings":
@@ -464,35 +468,61 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2402.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/c/Users/CJC/CompThink/scaling-dimensions/index.html",
+					"buffer": 5,
+					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/bootstrap.css",
 					"settings":
 					{
-						"buffer_size": 3303,
+						"buffer_size": 99959,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3120,
-								3120
+								29435,
+								29435
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 368.0,
+						"translation.y": 26447.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/application.css.scss",
+					"settings":
+					{
+						"buffer_size": 837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -502,25 +532,24 @@
 					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 4475,
+						"buffer_size": 4824,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3986,
-								3986
+								4311,
+								4362
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1002.0,
+						"translation.y": 1218.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -530,15 +559,15 @@
 					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/views/home/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 1749,
+						"buffer_size": 2845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								903,
-								903
+								2781,
+								2781
 							]
 						],
 						"settings":
@@ -548,62 +577,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/scaffolds.css.scss",
-					"settings":
-					{
-						"buffer_size": 1074,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								363,
-								363
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/c/Users/CJC/CompThink/scaling-dimensions/app/assets/stylesheets/screen.css",
-					"settings":
-					{
-						"buffer_size": 1163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								355,
-								355
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 663.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -617,7 +591,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -644,11 +618,11 @@
 	"menu_visible": true,
 	"output.find_results":
 	{
-		"height": 262.0
+		"height": 100.0
 	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -656,6 +630,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"twit",
+				"vendor/cache/compass_twitter_bootstrap-2.0.3.gem"
+			],
+			[
+				"bootstrap.js",
+				"app/assets/javascripts/libs/bootstrap/bootstrap.js"
+			],
+			[
+				"application.js",
+				"app/assets/javascripts/application.js"
+			],
 			[
 				"sscre",
 				"app/assets/stylesheets/screen.css"

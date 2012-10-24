@@ -42,20 +42,7 @@
 	          <span class="icon-bar"></span>
 	        </a>
 	        <a class="brand" id="home" href="#">Astronomical Proportions</a>
-	        <div class="nav-collapse">
-	          <ul class="nav">
-	            <!-- <li class="dimensionSelector" id="diameter"><a href="#diameter">Diameter</a></li> -->
-	            <!-- <li class="dimensionSelector" id="surface_area"><a href="#surface_area">Surface Area</a></li> -->
-	            <!-- <li class="dimensionSelector" id="length"><a href="#length">Length</a></li> -->
-	            <!-- <li class="dimensionSelector" id="width"><a href="#width">Width</a></li> -->
-	            <!-- <li class="dimensionSelector" id="height"><a href="#height">Height</a></li> -->
-	            <!-- <li class="dimensionSelector" id="area"><a href="#area">Area</a></li> -->
-	            <!-- <li class="dimensionSelector" id="volume"><a href="#volume">Volume</a></li> -->
-	          </ul>
-	        </div> <!--/.nav-collapse -->
-	      </div> <!-- /.container -->
-	      <!-- left sidebar -->
-	      <div id="user_nav">
+	        <div id="user_nav">
 					<% if person_signed_in? %>
 						Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
 						<%= link_to "Sign out", destroy_person_session_path %>
@@ -66,6 +53,8 @@
 						<% end %>
 					<% end %>
 				</div>
+	      </div> <!-- /.container -->
+	      
 	    </div> <!-- /.navbar-inner -->
 	  </div> <!-- /.navbar-fixed-top -->
 
@@ -92,9 +81,9 @@
 
 	        <div class="span2">
 	          <ul class="nav nav-list" id="selector-list" data-spy="affix">
-	          	<li class="modeSelector active" id="li-compare"><a href="#">Compare Mode</a></li>
-	          	<li class="modeSelector" id="li-analogy"><a href="#">Analogy Mode</a></li>
-	          	<li class="modeSelector" id="li-prediction"><a href="#">Prediction Mode</a></li>
+	          	<li class="modeSelector active" id="li-compare"><a href="#"><i class="icon-zoom-in"></i>Compare Mode</a></li>
+	          	<li class="modeSelector" id="li-analogy"><a href="#"><i class="icon-question-sign"></i>Analogy Mode</a></li>
+	          	<li class="modeSelector" id="li-prediction"><a href="#"><i class="icon-resize-vertical"></i>Prediction Mode</a></li>
 	          </ul>
 	        </div>
 	    </div>

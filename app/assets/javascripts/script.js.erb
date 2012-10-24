@@ -14,7 +14,8 @@ $(document).ready(function(){
    
 	$("#animateObjects").hide();
   $("#analogyObjects").hide();
-  $("#prdictObjects").hide();
+  $("#predictionObjects").hide();
+  
 
 	var urlDimension = location.hash.replace("#","");
 	if (urlDimension.length == 0) {
@@ -63,6 +64,7 @@ $(document).ready(function(){
 					$(this).toggleClass("selectedObject");
 				}
 				if ($(".selectedObject").length == 2) {
+
 					//If compare mode activated, execute the enclosed
 					if($("#selector-list li.active").attr("id") == "li-compare") {
 					//Clear List
@@ -82,28 +84,61 @@ $(document).ready(function(){
 
 				  //If analogy mode activated, execute the enclosed
 				  if($("#selector-list li.active").attr("id") == "li-analogy") {
+				  	//Setup
 				  	 $("#analogyleftObject").empty();
 					   $("#analogyrightObject").empty();
 				  	 $("#analogyleftObject").append($("#list1 dd.selectedObject img").clone());
 					   $("#analogyrightObject").append($("#list2 dd.selectedObject img").clone());
-					   $("#analogyrightObject img").removeClass("iosListImage");
-				    	$("#analogyrightObject img").removeClass("iosListImage");
+					   $("#analogyleftObject img").removeClass("iosListImage");
+				     $("#analogyrightObject img").removeClass("iosListImage");
+				     $("#analogyleftObjectName1").text($("#analogyleftObject img").attr("attrarticle") + " " +
+					   			$("#analogyleftObject img").attr("attrname"));
+				     $("#analogyrightObjectName1").text($("#analogyrightObject img").attr("attrarticle") + " " +
+					   			$("#analogyrightObject img").attr("attrname"));
+				     $("#analogyleftObjectName2").text("________");
+				     $("#analogyrightObjectName2").text("________");
+				     //Activate
 				  	 $("#analogyObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  }
 
 				  //If prediction mode activated, execute the enclosed
 					if($("#selector-list li.active").attr("id") == "li-prediction") {
-						$("#predictionleftObject").empty();
+						 //Setup
+						 $("#predictionleftObject").empty();
 					   $("#predictionrightObject").empty();
 				  	 $("#predictionleftObject").append($("#list1 dd.selectedObject img").clone());
 					   $("#predictionrightObject").append($("#list2 dd.selectedObject img").clone());
+					   $("#predictionleftObject img").removeClass("iosListImage");
 					   $("#predictionrightObject img").removeClass("iosListImage");
-					   $("#predictionrightObject img").removeClass("iosListImage");
+					   $("#leftPredictionObjectName").text($("#predictionleftObject img").attr("attrarticle") + " " +
+					   			$("#predictionleftObject img").attr("attrname"));
+					   $("#rightPredictionObjectName").text($("#predictionrightObject img").attr("attrarticle") + " " +
+					   		 	$("#predictionrightObject img").attr("attrname"));
+
+					   //Do
 				  	 $("#predictionObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
+				  	 $("#predictionleftObject").resizable({
+            aspectRatio: 1 / 1,
+            maxHeight: 350,
+            maxWidth: 350,
+            minHeight: 10,
+            minWidth: 10
+        });
+
+
+				  	 $("#predictionrightObject").resizable({
+            aspectRatio: 1 / 1,
+            maxHeight: 350,
+            maxWidth: 350,
+            minHeight: 10,
+            minWidth: 10,
+            // handles: 'w,s,sw'
+        });
+				  	 // $('.ui-resizable-sw').addClass('ui-icon ui-icon-gripsmall-diagonal-sw');
 				  }
 				}
 			});
-		});
+		}); //End list container each
 		
 		$("#chooseObjects").bind("dimensionChosen", function() {
 			$(".listContainer dd img").each(function(){
@@ -126,7 +161,7 @@ $(document).ready(function(){
 
 		$("#chooseObjects").trigger("dimensionChosen");
 
-	});
+	}); // End bind to objects loaded
 
 	$("#chooseObjects").trigger("objectsLoaded");
 
@@ -154,20 +189,20 @@ $(document).ready(function(){
 	});
 
 	$("#animateObjects").bind("activate", function(event, data) {
-		$("#chooseObjects").toggle();
-		$("#animateObjects").toggle();
+		$("#chooseObjects").hide();
+		$("#animateObjects").show();
 		$("#reverseDescription").trigger("resetDescriptions");
 	});
 
 
   $("#analogyObjects").bind("activate", function(event, data) {
-		$("#chooseObjects").toggle();
-		$("#analogyObjects").toggle();
+		$("#chooseObjects").hide();
+		$("#analogyObjects").show();
 	});
 
   $("#predictionObjects").bind("activate", function(event, data) {
-		$("#chooseObjects").toggle();
-		$("#predictionObjects").toggle();
+		$("#chooseObjects").hide();
+		$("#predictionObjects").show();
 	});
 
 	$("#chooseObjects").bind("activate", function(event, data) {
@@ -264,7 +299,7 @@ function scale(dimension, a, b) {
 		window.setTimeout(
 			function () {
 				var aWidth = Math.max(b.width()*factor, 5);
-				var marginLeft = 500-aWidth;
+				var marginLeft = 480-aWidth;
 				a.animate({
 					width: aWidth, 
 					marginLeft: marginLeft+"px"
@@ -277,7 +312,7 @@ function scale(dimension, a, b) {
 		window.setTimeout(
 			function () {
 				var bWidth = Math.max(a.width()/factor, 5);
-				var marginRight = 500-bWidth;
+				var marginRight = 480-bWidth;
 				b.animate({
 					width: bWidth, 
 					marginRight: marginRight+"px"

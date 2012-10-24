@@ -4,7 +4,10 @@ class HomeController < ApplicationController
   	@itemsDict = {}
 
   	for person in @people
-  		@itemsDict[person] = Item.where(:person_id => person.id)
+      items = Item.where(:person_id => person.id)
+      if items.length > 0
+  		  @itemsDict[person] = items
+      end
   	end
   end
 end

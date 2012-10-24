@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div id="animateObjects" class="span8">
+      <div id="animateObjects" class="span10">
         <div>
           <div id="leftObject" class="objectAnimation left">
           </div>
@@ -37,20 +37,51 @@
         </div>
       </div>
 
-      <div id="analogyObjects" class="span8">
-        <div>
-          <div id="analogyleftObject" class="left">
+      <div id="analogyObjects" class="span10">
+        <div id="instructionText" class="row">
+          The DIMENSION of <span class="orange" id="analogyleftObjectName1"></span> is to the DIMENSION of 
+          <span class="maroon" id="analogyrightObjectName1"></span> 
+          <br/> as the DIMENSION of <span id="analogyleftObjectName2"></span> is to the DIMENSION of 
+          <span id="analogyrightObjectName2"></span>.
+          <br/><br/><br/>
+        </div>
+        <div class="row">
+          <div class="span5">
+            <div id="analogyleftObject" class="left">
+            </div>
           </div>
-          <div id="analogyrightObject" class="right">
+          
+          <div class="span5">
+            <div id="analogyrightObject" class="left">
+            </div>
           </div>
         </div>
       </div>
 
-      <div id="predictionObjects" class="span8">
-        <div>
-          <div id="predictionleftObject" class="left">
+
+      <div id="predictionObjects" class="span10">
+        <div class="row">
+          <p>
+            <!-- If <span id="leftPredictionObjectName"></span> was this big, what size would <span id="rightPredictionObjectName"></span> be? <br /> -->
+          Drag the smaller object to the correct size!
+          <button type="button" class="btn btn-primary">Check me!</button>
+        </p> 
+
+          <br /><br />
+        </div>
+        <div class="row">
+          <div class="span6">
+            <div id="predictionleftObject" class="left">
+            </div>
           </div>
-          <div id="predictionrightObject" class="right">
+          
+          
+
+          <div class="span6">
+            <div id="predictionrightObject" class="left">
+            </div>
           </div>
+
+          
         </div>
       </div>
