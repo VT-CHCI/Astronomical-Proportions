@@ -7,9 +7,9 @@ ScalingDimensions::Application.routes.draw do
 
   # devise_for :people
 
-  match '/interaction_logs/service' => 'log_service#log', :via => :post
+  match '/interaction_logs/service' => 'log_service#log'
 
-  resources :interaction_logs
+  # resources :interaction_logs
 
   resources :log_types
 

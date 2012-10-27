@@ -50,8 +50,8 @@ $(document).ready(function(){
 				
 				oldSelection.toggleClass("selectedObject");
 				if (!oldSelection.attr("id")) {
-					sendLog([[log_types["select"], "from: " + id + "selected: " + $(this).find("img").attr("attrname")]]);
-					clog("from " + id + "selected: " + $(this).attr("id"));
+					sendLog([[log_types["select"], "from: " + id + " selected: " + $(this).find("img").attr("attrname")]]);
+					clog("from " + id + " selected: " + $(this).attr("id"));
 					$(this).toggleClass("selectedObject");
 				}
 				else if (oldSelection.attr("id") != $(this).attr("id")) {
@@ -349,7 +349,8 @@ function sendLog (logInfoPairs) {
 		}
 		logs.push(log);
 	}
-	$.ajax("http://test.astronomicalproportions.org/interaction_logs/service",
+  console.log("about to post");
+	$.ajax("http://localhost:3000/interaction_logs/service",
 		{
 			data: {"logs":logs, "application":"Astronomical Proportions"},
 			type: "POST",
