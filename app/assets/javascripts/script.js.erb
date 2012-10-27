@@ -117,7 +117,7 @@ $(document).ready(function(){
 
 					   //Do
 				  	 $("#predictionObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
-				  	 $("#predictionleftObject").resizable({
+				  	 $("#predictionObjects img").resizable({
             aspectRatio: 1 / 1,
             maxHeight: 350,
             maxWidth: 350,
@@ -125,15 +125,6 @@ $(document).ready(function(){
             minWidth: 10
         });
 
-
-				  	 $("#predictionrightObject").resizable({
-            aspectRatio: 1 / 1,
-            maxHeight: 350,
-            maxWidth: 350,
-            minHeight: 10,
-            minWidth: 10,
-            // handles: 'w,s,sw'
-        });
 				  	 // $('.ui-resizable-sw').addClass('ui-icon ui-icon-gripsmall-diagonal-sw');
 				  }
 				}
