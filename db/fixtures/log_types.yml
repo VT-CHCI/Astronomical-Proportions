@@ -1,8 +1,11 @@
 begin:
-    name: "Begin Interaction"
+  id: 1
+  name: "Begin Interaction"
 
 select:
-    name: "Selection"
+  id: 2
+  name: "Selection"
 
 action:
-    name: "Action"
+  id: 3
+  name: "Action"
