@@ -432,7 +432,7 @@ function sendLog (logInfoPairs) {
 		logs.push(log);
 	}
   console.log("about to post");
-	$.ajax("http://localhost:3000/interaction_logs/service",
+	$.ajax("http://test.astronomicalproportions.org/interaction_logs/service",
 		{
 			data: {"logs":logs, "application":"Astronomical Proportions"},
 			type: "POST",
