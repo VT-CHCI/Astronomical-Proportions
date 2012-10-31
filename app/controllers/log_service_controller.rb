@@ -35,4 +35,11 @@ class LogServiceController < ActionController::Base
       render :text=>"failed for: " + failures.to_s, :status => :internal_server_error
     end
   end
+  
+  def respond_with_json(item)
+    respond_with do |format|
+      format.json { render :json => item }
+      format.js   { render :json => item, :callback => params[:callback] }
+    end
+  end
 end
