@@ -244,6 +244,7 @@
 	},
 	"file_history":
 	[
+		"/Users/tgm/dev/Astronomical-Proportions/app/assets/javascripts/script.js.erb",
 		"/Users/tgm/dev/scaling-dimensions/app/views/home/index.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/app/views/layouts/application.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/Astronomical Proportions.sublime-project",
@@ -370,8 +371,7 @@
 		"/Users/tgm/dev/scaling-dimensions/app/views/devise/sessions/new.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/app/views/devise/registrations/new.html.erb",
 		"/Users/tgm/dev/scaling-dimensions/config/routes.rb",
-		"/Users/tgm/dev/scaling-dimensions/db/migrate/20120814160700_add_unknown_user_to_interaction_logs.rb",
-		"/Users/tgm/dev/scaling-dimensions/app/controllers/courses_controller.rb"
+		"/Users/tgm/dev/scaling-dimensions/db/migrate/20120814160700_add_unknown_user_to_interaction_logs.rb"
 	],
 	"find":
 	{
@@ -402,6 +402,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"%",
 			"clear",
 			"localhost:3000/interaction_logs/service",
 			"localhost:3000",
@@ -528,8 +529,7 @@
 			"destroy_person_session",
 			"generate model",
 			"object",
-			"class",
-			"img"
+			"class"
 		],
 		"highlight": true,
 		"in_selection": false,
