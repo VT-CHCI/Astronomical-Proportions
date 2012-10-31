@@ -6,6 +6,13 @@ var log_types = { //check these values against the order in db/fixtures/log_type
 	"action":	3
 };
 
+var predictionTolerance = .025;
+var predictionSecondaryTolerance = 2*predictionTolerance;
+var precision = 3; //Precision of prediction mode
+var resizePadding = 2;
+var predictionOriginalObjectWidth = 350 - resizePadding;
+var predictionTooLargeFlag = false;
+
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
@@ -34,6 +41,66 @@ $(document).ready(function(){
 		if($("#chooseObjects").is(":hidden")) {
 			$("#chooseObjects").trigger("activate");
 		}
+	});
+
+	$("#predictionButton").click(function(){
+		var leftSize = $("#predictionleftObject img").width()/predictionOriginalObjectWidth;
+		var rightSize = $("#predictionrightObject img").width()/predictionOriginalObjectWidth;
+
+    var leftValue = $("#predictionleftObject img").attr("attr" + urlDimension);
+    var rightValue = $("#predictionrightObject img").attr("attr" + urlDimension);
+
+    var difference = Math.abs(leftValue/(leftSize/rightSize)-rightValue);
+
+		if(difference <= predictionTolerance) {
+			$("#predictionCorrect").show();
+		}
+		else if (difference <= predictionSecondaryTolerance) {
+			$("#predictionClose").show();
+		} 
+		else {
+			//Left Actual Value greater than right actual value
+			//One has to be at maximum, the other at minimum
+			//The ratio must be inexpressible on the screen (too big/small)
+			//Size must be correct for each object
+			if(leftSize >= 1.000 && rightSize <= 0.024 ) {
+				if(leftValue/rightValue >= 40) {
+					$("#predictionCorrect").show();
+				}
+				else {
+				$("#predictionIncorrect").show();
+			}
+			}
+			else if(rightSize >= 1.000 && leftSize <= 0.024 ) {
+				if(rightValue/leftValue >= 40) {
+					$("#predictionCorrect").show();
+				}
+				else {
+				$("#predictionIncorrect").show();
+			}
+			}
+			else {
+				$("#predictionIncorrect").show();
+			}
+
+		}
+
+		// if(difference <= predictionTolerance && difference >= -predictionTolerance) {
+		// 	//You're very close or correct
+		// 	$("#predictionCorrect").show();
+		// }
+		// else if (difference <= -predictionTolerance) {
+		// 	//Object is too small
+		// 	console.log("too small!");
+		// }
+		// else if (difference >= predictionTolerance) {
+		// 	//Object is too large
+		// 	console.log("too large!");
+		// }
+		// else {
+		// 	//Should never get here?
+		// 	console.log("Nope!");
+		// }
 	});
 
 	$("#chooseObjects").bind("objectsLoaded", function() {
@@ -114,16 +181,31 @@ $(document).ready(function(){
 					   			$("#predictionleftObject img").attr("attrname"));
 					   $("#rightPredictionObjectName").text($("#predictionrightObject img").attr("attrarticle") + " " +
 					   		 	$("#predictionrightObject img").attr("attrname"));
+					   $("#predictionleftObjectSize").text(($("#predictionleftObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
+					   $("#predictionrightObjectSize").text(($("#predictionrightObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
+					   $(".label").hide();
 
 					   //Do
 				  	 $("#predictionObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  	 $("#predictionObjects img").resizable({
-            aspectRatio: 1 / 1,
-            maxHeight: 350,
-            maxWidth: 350,
-            minHeight: 10,
-            minWidth: 10
-        });
+            		aspectRatio: 1 / 1,
+            		maxHeight: 350,
+            		maxWidth: 350,
+           		  minHeight: 10,
+           		  minWidth: 10,
+           		  resize: function() {
+           		  	$("#predictionleftObjectSize").text(($("#predictionleftObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
+					        $("#predictionrightObjectSize").text(($("#predictionrightObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
+					        $(".label").hide();
+					        $("#predictionRatio").show();
+					        var leftSize = $("#predictionleftObject img").width()/predictionOriginalObjectWidth;
+									var rightSize = $("#predictionrightObject img").width()/predictionOriginalObjectWidth;
+									if((leftSize >= 1.000 && rightSize <= 0.024) || (rightSize >= 1.000 && leftSize <= 0.024 )) {
+										$("#predictionRatio").hide();
+					        	$("#predictionTooLarge").show();
+					        }//End if statement
+           		  }//End resize function
+      			  });
 
 				  	 // $('.ui-resizable-sw').addClass('ui-icon ui-icon-gripsmall-diagonal-sw');
 				  }
@@ -161,7 +243,7 @@ $(document).ready(function(){
 	$("#dimension-list li").click(function() {
 		urlDimension = $(this).attr("id").substring(3);
 		clog("changed dimension to: " + $(this).attr("id").substring(3));		
-		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id").substring(3)]]);	
+		sendLog([[log_types["select"], "changed dimension to: " + $(this).attr("id").substring(3)]]);
 		$("#dimension-list li.active").toggleClass("active");
 		$(this).toggleClass("active");
 		if ($("#chooseObjects").is(":hidden")) {
