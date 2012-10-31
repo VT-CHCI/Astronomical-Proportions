@@ -64,9 +64,13 @@
           <p>
             <!-- If <span id="leftPredictionObjectName"></span> was this big, what size would <span id="rightPredictionObjectName"></span> be? <br /> -->
           Drag the smaller object to the correct size!
-          <button type="button" class="btn btn-primary">Check me!</button>
+          <button type="button" id="predictionButton" class="btn btn-primary">Check me!</button>
         </p> 
-
+          <span id="predictionRatio"><span id="predictionleftObjectSize"></span> : <span id="predictionrightObjectSize"></span></span>
+          <span class="label label-info" id="predictionTooLarge">That's as close as I can get.</span>
+          <span class="label label-success" id="predictionCorrect">Correct!</span>
+          <span class="label label-warning" id="predictionClose">You're getting close.</span>
+          <span class="label label-important" id="predictionIncorrect">You're pretty far off.</span>
           <br /><br />
         </div>
         <div class="row">

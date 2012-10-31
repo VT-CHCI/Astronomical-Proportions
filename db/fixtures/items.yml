@@ -117,3 +117,37 @@ Pea:
   diameter: .0064
   volume: 1.37258277e-7
   person_id: 4
+
+Jamesrivermap:
+  name: "James River"
+  article: "the"
+  length: 560000
+  area: 27000000
+  person_id: 4
+
+Venus:
+  name: "Venus"
+  article: ""
+  diameter: 12100000
+  volume: 9.27587e20
+  person_id: 4
+
+Jupiter:
+  name: "Jupiter"
+  article: ""
+  diameter: 143000000
+  volume: 153111e24
+  person_id: 4
+
+Sun:
+  name: "Sun"
+  article: "the"
+  diameter: 1392000000
+  volume: 1434362000000
+  person_id: 4
+
+MilkyWay:
+  name: "Milky Way"
+  article: "the"
+  diameter: 10e21
+  person_id: 4
