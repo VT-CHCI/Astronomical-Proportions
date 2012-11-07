@@ -6,8 +6,8 @@ var log_types = { //check these values against the order in db/fixtures/log_type
 	"action":	3
 };
 
-var predictionTolerance = .025;
-var predictionSecondaryTolerance = 2*predictionTolerance;
+var predictionTolerance = 5;
+var predictionSecondaryTolerance = 6*predictionTolerance;
 var precision = 3; //Precision of prediction mode
 var resizePadding = 2;
 var predictionOriginalObjectWidth = 350 - resizePadding;
@@ -44,19 +44,44 @@ $(document).ready(function(){
 	});
 
 	$("#predictionButton").click(function(){
-		var leftSize = $("#predictionleftObject img").width()/predictionOriginalObjectWidth;
-		var rightSize = $("#predictionrightObject img").width()/predictionOriginalObjectWidth;
+		var leftSize = parseFloat(($("#predictionleftObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
+		var rightSize = parseFloat(($("#predictionrightObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
 
-    var leftValue = $("#predictionleftObject img").attr("attr" + urlDimension);
-    var rightValue = $("#predictionrightObject img").attr("attr" + urlDimension);
+    var leftValue = parseFloat($("#predictionleftObject img").attr("attr" + urlDimension));
+    var rightValue = parseFloat($("#predictionrightObject img").attr("attr" + urlDimension));
 
-    var difference = Math.abs(leftValue/(leftSize/rightSize)-rightValue);
+    if(leftValue < rightValue) {
+      var screenDifference = (leftSize/rightSize)*100;
+      var realDifference = (leftValue/rightValue)*100;
+    }
+    else {
+      var screenDifference = (rightSize/leftSize)*100;
+      var realDifference = (rightValue/leftValue)*100;
+    }
+    var difference = ((screenDifference - realDifference)/Math.abs(realDifference))*100;
+    var adjustedDifference = Math.abs(difference);
 
-		if(difference <= predictionTolerance) {
+    console.log("urlDimension: " + urlDimension);
+    console.log("leftSize: " + leftSize);
+    console.log("rightSize: " + rightSize)
+    console.log("leftValue: " + leftValue);
+    console.log("rightValue: " + rightValue)
+    console.log("realDifference: " + realDifference);
+    console.log("screenDifference: " + screenDifference);
+    console.log("difference: " + difference);
+
+    
+
+		if(adjustedDifference <= predictionTolerance) {
 			$("#predictionCorrect").show();
 		}
-		else if (difference <= predictionSecondaryTolerance) {
-			$("#predictionClose").show();
+		else if (adjustedDifference <= predictionSecondaryTolerance) {
+			if(difference > 0) {
+				$("#predictionCloseSmall").show();
+			}
+			else {
+				$("#predictionCloseLarge").show();
+			}
 		} 
 		else {
 			//Left Actual Value greater than right actual value
@@ -84,23 +109,6 @@ $(document).ready(function(){
 			}
 
 		}
-
-		// if(difference <= predictionTolerance && difference >= -predictionTolerance) {
-		// 	//You're very close or correct
-		// 	$("#predictionCorrect").show();
-		// }
-		// else if (difference <= -predictionTolerance) {
-		// 	//Object is too small
-		// 	console.log("too small!");
-		// }
-		// else if (difference >= predictionTolerance) {
-		// 	//Object is too large
-		// 	console.log("too large!");
-		// }
-		// else {
-		// 	//Should never get here?
-		// 	console.log("Nope!");
-		// }
 	});
 
 	$("#chooseObjects").bind("objectsLoaded", function() {
@@ -164,6 +172,7 @@ $(document).ready(function(){
 					   			$("#analogyrightObject img").attr("attrname"));
 				     $("#analogyleftObjectName2").text("________");
 				     $("#analogyrightObjectName2").text("________");
+				     $(".analogyDimension").text(urlDimension);
 				     //Activate
 				  	 $("#analogyObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  }
@@ -181,6 +190,10 @@ $(document).ready(function(){
 					   			$("#predictionleftObject img").attr("attrname"));
 					   $("#rightPredictionObjectName").text($("#predictionrightObject img").attr("attrarticle") + " " +
 					   		 	$("#predictionrightObject img").attr("attrname"));
+					   $("#predictionleftObject img").css("height","348px");
+						 $("#predictionleftObject img").css("width","348px");
+						 $("#predictionrightObject img").css("height","348px");
+					   $("#predictionrightObject img").css("width","348px");
 					   $("#predictionleftObjectSize").text(($("#predictionleftObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
 					   $("#predictionrightObjectSize").text(($("#predictionrightObject img").width()/predictionOriginalObjectWidth).toFixed(precision));
 					   $(".label").hide();
@@ -189,8 +202,8 @@ $(document).ready(function(){
 				  	 $("#predictionObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  	 $("#predictionObjects img").resizable({
             		aspectRatio: 1 / 1,
-            		maxHeight: 350,
-            		maxWidth: 350,
+	            		maxHeight: 350,
+	            		maxWidth: 350,
            		  minHeight: 10,
            		  minWidth: 10,
            		  resize: function() {
@@ -204,9 +217,20 @@ $(document).ready(function(){
 										$("#predictionRatio").hide();
 					        	$("#predictionTooLarge").show();
 					        }//End if statement
-           		  }//End resize function
+           		  },//End resize function
+           		  create: function() {
+           		  	$("#predictionRatio").show();
+           		  	$("#predictionleftObject .ui-wrapper").css("height","350px");
+           		  	$("#predictionleftObject .ui-wrapper").css("width","350px");
+           		  	$("#predictionleftObject img").css("height","348px");
+								  $("#predictionleftObject img").css("width","348px");
+								  $("#predictionrightObject .ui-wrapper").css("height","350px");
+           		  	$("#predictionrightObject .ui-wrapper").css("width","350px");
+					        $("#predictionrightObject img").css("height","348px");
+					        $("#predictionrightObject img").css("width","348px");
+           		  }
       			  });
-
+										
 				  	 // $('.ui-resizable-sw').addClass('ui-icon ui-icon-gripsmall-diagonal-sw');
 				  }
 				}

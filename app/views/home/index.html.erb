@@ -39,10 +39,10 @@
 
       <div id="analogyObjects" class="span10">
         <div id="instructionText" class="row">
-          The DIMENSION of <span class="orange" id="analogyleftObjectName1"></span> is to the DIMENSION of 
-          <span class="maroon" id="analogyrightObjectName1"></span> 
-          <br/> as the DIMENSION of <span id="analogyleftObjectName2"></span> is to the DIMENSION of 
-          <span id="analogyrightObjectName2"></span>.
+          The <span class="analogyDimension"></span> of <span class="orange" id="analogyleftObjectName1"></span> is to the <span class="analogyDimension"></span> of <span class="maroon" id="analogyrightObjectName1"></span> 
+          <br/> as 
+          the <span class="analogyDimension"></span> of <span id="analogyleftObjectName2"></span> is to 
+          the <span class="analogyDimension"></span> of <span id="analogyrightObjectName2"></span>.
           <br/><br/><br/>
         </div>
         <div class="row">
@@ -69,7 +69,8 @@
           <span id="predictionRatio"><span id="predictionleftObjectSize"></span> : <span id="predictionrightObjectSize"></span></span>
           <span class="label label-info" id="predictionTooLarge">That's as close as I can get.</span>
           <span class="label label-success" id="predictionCorrect">Correct!</span>
-          <span class="label label-warning" id="predictionClose">You're getting close.</span>
+          <span class="label label-warning" id="predictionCloseSmall">You're getting close. (Hint: Try making it smaller.)</span>
+          <span class="label label-warning" id="predictionCloseLarge">You're getting close. (Hint: Try making it bigger.)</span>
           <span class="label label-important" id="predictionIncorrect">You're pretty far off.</span>
           <br /><br />
         </div>

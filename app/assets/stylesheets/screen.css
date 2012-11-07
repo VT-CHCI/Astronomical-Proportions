@@ -105,6 +105,7 @@ dd.selectedObject:hover {
 
 #predictionObjects img {
 	width: 350px;
+    height: 350px;
 	border: 1px solid gray;
 }
 
@@ -117,5 +118,5 @@ dd.selectedObject:hover {
 }
 
 .correct {
-	
+
 }
