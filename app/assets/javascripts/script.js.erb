@@ -114,9 +114,15 @@ $(document).ready(function(){
 	$("#chooseObjects").bind("objectsLoaded", function() {
 
 		$("#list1").clone().appendTo("#rightList");
-		$("#rightList > .listContainer").attr("id", "list2");
+    $("#rightList > .listContainer").attr("id", "list2");
 
-		$(".listContainer").ioslist();
+    $("#list1").clone().appendTo("#analogySecondObjectsLeft");
+    $("#analogySecondObjectsLeft > .listContainer").attr("id", "list3");
+
+    $("#list2").clone().appendTo("#analogySecondObjectsRight");
+    $("#analogySecondObjectsRight > .listContainer").attr("id", "list4");
+
+    $(".listContainer").ioslist();
 
 		$(".listContainer").each(function(){
 			var id = $(this).attr("id");
@@ -138,6 +144,8 @@ $(document).ready(function(){
 						" to: " + $(this).attr("id"));
 					$(this).toggleClass("selectedObject");
 				}
+
+
 				if ($(".selectedObject").length == 2) {
 
 					//If compare mode activated, execute the enclosed
@@ -153,7 +161,7 @@ $(document).ready(function(){
 					$("#rightObject").append($("#list2 dd.selectedObject img").clone());
 					$("#leftObject img").removeClass("iosListImage");
 					$("#rightObject img").removeClass("iosListImage");
-					  scale(urlDimension, $("#leftObject img"), $("#rightObject img"));
+					  scale(urlDimension, $("#leftObject img"), $("#rightObject img"), $("#main .span10"));
 					  $("#animateObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  }
 
@@ -162,6 +170,10 @@ $(document).ready(function(){
 				  	//Setup
 				  	 $("#analogyleftObject").empty();
 					   $("#analogyrightObject").empty();
+					   $("#analogyAnimateleftObject").empty();
+					   $("#analogyAnimaterightObject").empty();
+					   $("#analogySecondObjectsLeft").show();
+					   $("#analogySecondObjectsRight").show();
 				  	 $("#analogyleftObject").append($("#list1 dd.selectedObject img").clone());
 					   $("#analogyrightObject").append($("#list2 dd.selectedObject img").clone());
 					   $("#analogyleftObject img").removeClass("iosListImage");
@@ -170,9 +182,25 @@ $(document).ready(function(){
 					   			$("#analogyleftObject img").attr("attrname"));
 				     $("#analogyrightObjectName1").text($("#analogyrightObject img").attr("attrarticle") + " " +
 					   			$("#analogyrightObject img").attr("attrname"));
+				     $("#analogyleftObjectValue1").html(" (" + $("#analogyleftObject img").attr("attr"+urlDimension)+" "+
+				     	getDimensionUnit(urlDimension) + ")");
+				     $("#analogyrightObjectValue1").html(" (" + $("#analogyrightObject img").attr("attr"+urlDimension)+" "+
+				     	getDimensionUnit(urlDimension) + ")");
 				     $("#analogyleftObjectName2").text("________");
 				     $("#analogyrightObjectName2").text("________");
+				     var analogyLeftSize = parseFloat($("#analogyleftObject img").attr("attr" + urlDimension));
+				     var analogyRightSize = parseFloat($("#analogyrightObject img").attr("attr" + urlDimension));
+				     if(analogyLeftSize >= analogyRightSize) {
+				     	$("#analogyRatio1").text(parseFloat(1).toFixed(precision) + ":" + parseFloat(analogyRightSize/analogyLeftSize).toPrecision(3));
+				     }
+				     else {
+				     	$("#analogyRatio1").text(parseFloat(analogyLeftSize/analogyRightSize).toPrecision(precision) + ":" + parseFloat(1).toFixed(precision));
+				     }
+
 				     $(".analogyDimension").text(urlDimension);
+				     $("#list3").clone().appendTo("#analogyrightList");
+				     $("#analogyrightList > .listContainer").attr("id", "list4");
+				     
 				     //Activate
 				  	 $("#analogyObjects").trigger("activate", {"selectedObjects" : $(".selectedObject")});
 				  }
@@ -234,6 +262,38 @@ $(document).ready(function(){
 				  	 // $('.ui-resizable-sw').addClass('ui-icon ui-icon-gripsmall-diagonal-sw');
 				  }
 				}
+
+				//Analogy
+				if(id == "list3") {
+					$("#analogyleftObjectName2").text($("#analogySecondObjectsLeft .selectedObject img").attr("attrarticle") + " " +
+					   			$("#analogySecondObjectsLeft .selectedObject img").attr("attrname"));
+				     
+				}
+				if(id == "list4") {
+					$("#analogyrightObjectName2").text($("#analogySecondObjectsRight .selectedObject img").attr("attrarticle") + " " +
+					   			$("#analogySecondObjectsRight .selectedObject img").attr("attrname"));
+				     
+				}
+
+				if(($("#list3 .selectedObject").length + $("#list4 .selectedObject").length) == 2) {
+				console.log("Executing analogy");
+				$("#analogySecondObjectsLeft").hide();
+				$("#analogySecondObjectsRight").hide();
+				console.log("left: " + $("#analogySecondObjectsLeft .selectedObject img"));
+				$("#analogyAnimateleftObject").append($("#analogySecondObjectsLeft .selectedObject img").clone());
+				$("#analogyAnimaterightObject").append($("#analogySecondObjectsRight .selectedObject img").clone());
+				$("#analogyAnimateleftObject img").removeClass("iosListImage");
+				$("#analogyAnimaterightObject img").removeClass("iosListImage");
+			  scale(urlDimension, $("#analogyAnimateleftObject img"), $("#analogyAnimaterightObject img"), $("#analogySecondObjects"));
+			  analogyLeftSize = parseFloat($("#analogyAnimateleftObject img").attr("attr" + urlDimension));
+				analogyRightSize = parseFloat($("#analogyAnimaterightObject img").attr("attr" + urlDimension));
+				if(analogyLeftSize >= analogyRightSize) {
+				  $("#analogyRatio2").text(parseFloat(1).toFixed(precision) + ":" + parseFloat(analogyRightSize/analogyLeftSize).toPrecision(precision));
+				}
+				else {
+				  $("#analogyRatio2").text(parseFloat(analogyLeftSize/analogyRightSize).toPrecision(precision) + ":" + parseFloat(1).toFixed(precision));
+				}
+			}
 			});
 		}); //End list container each
 		
@@ -248,12 +308,13 @@ $(document).ready(function(){
 				}
 			});
 
-			// If all the items for a given person are hidden, hide the name
-			$(".listContainer dl").each(function(){
-				if ($(this).find("img:visible").length == 0) {
-					$(this).hide();
-				}
-			});
+			// // If all the items for a given person are hidden, hide the name
+			// $(".listContainer dl").each(function(){
+			// 	if ($(this).find("img:visible").length == 0) {
+			// 		$(this).hide();
+			// 	}
+			// });
+
 		});
 
 		$("#chooseObjects").trigger("dimensionChosen");
@@ -297,6 +358,8 @@ $(document).ready(function(){
 		$("#analogyObjects").show();
 	});
 
+
+
   $("#predictionObjects").bind("activate", function(event, data) {
 		$("#chooseObjects").hide();
 		$("#predictionObjects").show();
@@ -319,7 +382,8 @@ $(document).ready(function(){
 
 }); //Closes document ready
 
-function scale(dimension, a, b) {
+function scale(dimension, a, b, animationContainer) {
+	console.log("Scaling...");
 	function verboseDescription(left, right, factor) {
 		//   users selects L <--> S                                       users selects S <--> L
 		// * The diameter of L is 7 times larger than the diameter of S. 	The diameter of S is 7 times smaller than the diameter of L.
@@ -342,7 +406,7 @@ function scale(dimension, a, b) {
 		}		
 
 		function respPercent(a, b, factor, dimension) {
-			return "The " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is " + (1/factor).toFixed(2)*100 + "% of the " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
+			return "The " + dimension.replace(/_/g, " ") + " of " + b.attr("attrarticle") + " " + b.attr("attrname") + " is " + factor + "% of the " + dimension.replace(/_/g, " ") + " of " + a.attr("attrarticle") + " " + a.attr("attrname") + ".";
 		}
 
 
@@ -355,33 +419,34 @@ function scale(dimension, a, b) {
 		}
 		else {
 			$("#reverseDescription").show();
+			$("#reverseDescription").unbind("click");
 			$("#reverseDescription").click(function() {
+				$(".scaleExplanation").addClass("hidden");
 				$("#expl"+displayedExp++%4).toggleClass("hidden");
-				$("#expl"+displayedExp%4).toggleClass("hidden");
 				clog("changed to expl "+displayedExp%4);
 				sendLog([[log_types["action"], "explanation changed to: "+$(".scaleExplanation:visible").text()]]);
 			});
 
 			if (factor < 1) {
 				result += '<span id="expl0" class="scaleExplanation">';
-				result += respSmaller(right, left, (1/factor).toFixed(2), dimension);
+				result += respSmaller(right, left, (1/factor).toFixed(precision), dimension);
 				result += '</span><span id="expl1" class="scaleExplanation hidden">';
-				result += respFraction(right, left, (1/factor).toFixed(2), dimension);
+				result += respFraction(right, left, (1/factor).toFixed(precision), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
-				result += respLarger(right, left, (1/factor).toFixed(2), dimension);
+				result += respLarger(right, left, (1/factor).toFixed(precision), dimension);
 				result += '</span><span id="expl3" class="scaleExplanation hidden">';
-				result += respPercent(right, left, (1/factor).toFixed(2), dimension);
+				result += respPercent(right, left, ((1/factor)*100).toFixed(2), dimension);
 				result += '</span>';
 			}
 			else {
 				result += '<span id="expl0" class="scaleExplanation">';
-				result += respLarger(left, right, (factor).toFixed(2), dimension);
+				result += respLarger(left, right, (factor).toFixed(precision), dimension);
 				result += '</span><span id="expl1" class="scaleExplanation hidden">';
-				result += respFraction(left, right, (factor).toFixed(2), dimension);
+				result += respFraction(left, right, (factor).toFixed(precision), dimension);
 				result += '</span><span id="expl2" class="scaleExplanation hidden">';
-				result += respSmaller(left, right, (factor).toFixed(2), dimension);
+				result += respSmaller(left, right, (factor).toFixed(precision), dimension);
 				result += '</span><span id="expl3" class="scaleExplanation hidden">';
-				result += respPercent(right, left, (1/factor).toFixed(2), dimension);
+				result += respPercent(right, left, ((factor)*100).toFixed(2), dimension);
 				result += '</span>';
 			}
 		}
@@ -396,7 +461,10 @@ function scale(dimension, a, b) {
 		window.setTimeout(
 			function () {
 				var aWidth = Math.max(b.width()*factor, 5);
-				var marginLeft = 480-aWidth;
+				//This is terrible, we are assuming stuff here.
+				var marginLeft = animationContainer.width()- a.parent().width() - aWidth -1;
+				console.log("awidth" + aWidth);
+				console.log("marginLeft: " + marginLeft);
 				a.animate({
 					width: aWidth, 
 					marginLeft: marginLeft+"px"
@@ -409,7 +477,9 @@ function scale(dimension, a, b) {
 		window.setTimeout(
 			function () {
 				var bWidth = Math.max(a.width()/factor, 5);
-				var marginRight = 480-bWidth;
+				var marginRight = animationContainer.width() - b.parent().width() - bWidth -1;
+				console.log("bwidth" + bWidth);
+				console.log("marginRight: " + marginRight);
 				b.animate({
 					width: bWidth, 
 					marginRight: marginRight+"px"
@@ -427,6 +497,17 @@ function clog(msg) {
 	if (logging) {
 		console.log(msg);
 	}
+}
+
+function getDimensionUnit(dimension) {
+if(dimension == "surface_area")
+	return "m<sup>2</sup>";
+else if(dimension == "area")
+	return "m<sup>2</sup>";
+else if(dimension == "volume")
+	return "m<sup>3</sup>";
+else
+	return "m";
 }
 
 function currentUser() {

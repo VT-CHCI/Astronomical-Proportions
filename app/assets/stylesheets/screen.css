@@ -99,7 +99,7 @@ dd.selectedObject:hover {
 	width: 150px; /*250px*/
 }
 
-.objectAnimation img, #analogyObjects img  {
+.objectAnimation img {
 	width: 200px;
 }
 
