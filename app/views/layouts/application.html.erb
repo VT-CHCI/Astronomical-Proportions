@@ -8,7 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title>Astronomical Proportions</title>
-
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -41,10 +41,10 @@
 	          <span class="icon-bar"></span>
 	          <span class="icon-bar"></span>
 	        </a>
-	        <a class="brand" id="home" href="#">Astronomical Proportions</a>
+	        <a class="brand" id="home" href="/">Astronomical Proportions</a>
 	        <div id="user_nav">
 					<% if person_signed_in? %>
-						Signed in as <span id="current_person"><%= current_person.email %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
+						Signed in as <span id="current_person"><%= current_person.firstName %></span><span id="current_person_id" class="hidden"><%= current_person.id %></span>. Not you?
 						<%= link_to "Sign out", destroy_person_session_path %>
 					<% else %>
 						<%= link_to "Sign up", new_person_registration_path %> or <%= link_to "Sign in", new_person_session_path %>
@@ -59,49 +59,66 @@
 	  </div> <!-- /.navbar-fixed-top -->
 
 		<!-- Example row of columns -->
+
+		<div id="messages">
+      <% if flash[:notice] %>
+        <div class="alert alert-block">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <%= alert %>
+        </div>
+      <% end %>
+    </div>
 	    <div class="row-fluid">
 		  <!-- left sidebar -->
-	     	<div class="span2">
-	            <!-- <h2>Left Nav</h2> -->
+        <% if params[:controller] != "items"  %>
+  	     	<div class="span2">
 
-	            <ul class="nav nav-list" id="dimension-list" data-spy="affix">
-	              <li class="dimensionSelector active" id="li-diameter"><a href="#diameter">Diameter</a></li>
-		            <li class="dimensionSelector" id="li-surface_area"><a href="#surface_area">Surface Area</a></li>
-		            <li class="dimensionSelector" id="li-length"><a href="#length">Length</a></li>
-		            <li class="dimensionSelector" id="li-width"><a href="#width">Width</a></li>
-		            <li class="dimensionSelector" id="li-height"><a href="#height">Height</a></li>
-		            <li class="dimensionSelector" id="li-area"><a href="#area">Area</a></li>
-		            <li class="dimensionSelector" id="li-volume"><a href="#volume">Volume</a></li>
-	            </ul>
-	        </div>
+            <ul class="nav nav-list" id="dimension-list" data-spy="affix">
+              <li class="dimensionSelector active" id="li-diameter"><a href="#diameter">Diameter</a></li>
+              <li class="dimensionSelector" id="li-surface_area"><a href="#surface_area">Surface Area</a></li>
+              <li class="dimensionSelector" id="li-length"><a href="#length">Length</a></li>
+              <li class="dimensionSelector" id="li-width"><a href="#width">Width</a></li>
+              <li class="dimensionSelector" id="li-height"><a href="#height">Height</a></li>
+              <li class="dimensionSelector" id="li-area"><a href="#area">Area</a></li>
+              <li class="dimensionSelector" id="li-volume"><a href="#volume">Volume</a></li>
+            </ul>
+            <hr />
+            <ul class="nav nav-list" id="selector-list" data-spy="affix">
+              <li class="modeSelector active" id="li-compare"><a href="#"><i class="icon-zoom-in"></i>Compare Mode</a></li>
+              <li class="modeSelector" id="li-analogy"><a href="#"><i class="icon-question-sign"></i>Analogy Mode</a></li>
+              <li class="modeSelector" id="li-prediction"><a href="#"><i class="icon-resize-vertical"></i>Prediction Mode</a></li>
+            </ul>
+          </div>
 
-	        <div class="span8">
-	        	<%= yield %>
-	        </div>
-
-	        <div class="span2">
-	          <ul class="nav nav-list" id="selector-list" data-spy="affix">
-	          	<li class="modeSelector active" id="li-compare"><a href="#"><i class="icon-zoom-in"></i>Compare Mode</a></li>
-	          	<li class="modeSelector" id="li-analogy"><a href="#"><i class="icon-question-sign"></i>Analogy Mode</a></li>
-	          	<li class="modeSelector" id="li-prediction"><a href="#"><i class="icon-resize-vertical"></i>Prediction Mode</a></li>
-	          </ul>
-	        </div>
+          <div class="span8">
+          	<%= yield %>
+          </div>
+        <% else %>
+          <div class="span10">
+            <%= yield %>
+          </div>
+        <% end %>
+        <div class="span2">
+          <ul class="nav nav-list" id="admin-list" data-spy="affix">
+            <% if params[:controller] == "items"  %>
+              <li class="admin"><a href="/"><i class="icon-home"></i> Back to Home</a></li>
+            <% end %>
+            <li class="admin"><a href="/items"> <i class="icon-th"></i> Data Table</a></li>
+            <li class="admin"><a href="/items/new"><i class="icon-plus-sign"></i> Add New Item</a></li>
+          </ul>
+        </div>
 	    </div>
-       <!--  <div class="hidden" id="dimension">
-
-        </div> -->
-        <!-- /left sidebar -->
-		<% if flash[:notice] %>
-			<p class="notice"><%= notice %></p>
-		<% end %>
-		<% if flash[:alert] %>
-			<p class="alert"><%= alert %></p>
-		<% end %>
 		
 	</div>
 
-	    <footer>
-       <p>&nbsp;&nbsp;&nbsp;&copy; Virginia Tech - Center for Human-Computer Interaction 2012</p>
-      </footer>
+  <footer>
+   <p>&nbsp;&nbsp;&nbsp;&copy; Virginia Tech - Center for Human-Computer Interaction 2012</p>
+  </footer>
 </body>
 </html>

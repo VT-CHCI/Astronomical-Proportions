@@ -1,27 +1,118 @@
 mike:
-    id: 1
-    firstName: "Michael"
-    lastName: "Stewart"
-    email: "tgm@xyz.edu"
-    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
-
-tatar:
-    id: 2
-    firstName: "Deborah"
-    lastName: "Tatar"
-    email: "deborah"
-    encrypted_password: "$2a$10$ttqvUv7z62p0DPgrZN6LpOL4rCe/a0CxLShZM6mKJiVpKxaPLOyqy"
-
-steve:
-    id: 3
-    firstName: "Steve"
-    lastName: "Harrison"
-    email: "tgm+steve@xyz.edu"
-    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
-
+  id: 999
+  firstName: "Michael"
+  lastName: "Stewart"
+  email: "tgm@xyz.edu"
 nate:
-    id: 4
-    firstName: "Nathan"
-    lastName: "Shotwell"
-    email: "tgm+nate@xyz.edu"
-    encrypted_password: "$2a$10$Iwkv4otCAQKvJQJ1km/CFuARh/Gq2RvGILmWUXkVWqsKGMPBdQT9W"
+  id: 100
+  firstName: "Nathan"
+  lastName: "Shotwell"
+  email: "tgm+nate@xyz.edu"
+Samer:
+  id: 1
+  firstName: "Samer"
+  email: "1"
+Alexander:
+  id: 2
+  firstName: "Alexander"
+  email: "2"
+Samuel:
+  id: 3
+  firstName: "Samuel"
+  email: "3"
+Jonathan:
+  id: 4
+  firstName: "Jonathan"
+  email: "4"
+Kyle:
+  id: 5
+  firstName: "Kyle"
+  email: "5"
+Camille:
+  id: 6
+  firstName: "Camille"
+  email: "6"
+Timothy:
+  id: 7
+  firstName: "Timothy"
+  email: "7"
+Jack:
+  id: 8
+  firstName: "Jack"
+  email: "8"
+Julianne:
+  id: 9
+  firstName: "Julianne"
+  email: "9"
+Abigail:
+  id: 10
+  firstName: "Abigail"
+  email: "10"
+Sydney:
+  id: 11
+  firstName: "Sydney"
+  email: "11"
+Jia:
+  id: 12
+  firstName: "Jia"
+  email: "12"
+Colin:
+  id: 13
+  firstName: "Colin"
+  email: "13"
+Carolina:
+  id: 14
+  firstName: "Carolina"
+  email: "14"
+Mason:
+  id: 15
+  firstName: "Mason"
+  email: "15"
+Juhi:
+  id: 16
+  firstName: "Juhi"
+  email: "16"
+Carter:
+  id: 17
+  firstName: "Carter"
+  email: "17"
+Haidyn:
+  id: 18
+  firstName: "Haidyn"
+  email: "18"
+Brandon:
+  id: 19
+  firstName: "Brandon"
+  email: "19"
+Ava:
+  id: 20
+  firstName: "Ava"
+  email: "20"
+Syed:
+  id: 21
+  firstName: "Syed"
+  email: "21"
+Sydney:
+  id: 22
+  firstName: "Sydney"
+  email: "22"
+Emma:
+  id: 23
+  firstName: "Emma"
+  email: "23"
+Van:
+  id: 24
+  firstName: "Van"
+  email: "24"
+Cameron:
+  id: 25
+  firstName: "Cameron"
+  email: "25"
+Jena:
+  id: 26
+  firstName: "Jena"
+  email: "26"
+Jeffrey:
+  id: 27
+  firstName: "Jeffrey"
+  email: "27"

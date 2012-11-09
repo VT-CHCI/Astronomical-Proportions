@@ -1,41 +1,41 @@
 <h1>Listing items</h1>
-
 <table>
   <tr>
-    <th>Name</th>
+    <th>Image</th>
     <th>Article</th>
-    <th>Filename</th>
+    <th>Name</th>
     <th>Diameter</th>
     <th>Length</th>
     <th>Width</th>
     <th>Height</th>
     <th>Area</th>
     <th>Volume</th>
-    <th>Creator</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
-    <td><%= item.name %></td>
-    <td><%= item.article %></td>
     <td><img src="<%= item.filename %>" width="50"/></td>
+    <td><%= item.article %></td>
+    <td><%= link_to item.name, item %></td>
     <td><%= item.diameter %></td>
     <td><%= item.length %></td>
     <td><%= item.width %></td>
     <td><%= item.height %></td>
     <td><%= item.area %></td>
     <td><%= item.volume %></td>
-    <td><%= item.person.firstName %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+    <% if current_person == item.person %>
+      <td><%= link_to 'Edit', edit_item_path(item) %></td>
+      <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+    <% else %>
+    <td></td>
+    <td></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Item', new_item_path %>
+
