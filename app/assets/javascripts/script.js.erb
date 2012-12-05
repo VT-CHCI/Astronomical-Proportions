@@ -13,6 +13,13 @@ var resizePadding = 2;
 var predictionOriginalObjectWidth = 350 - resizePadding;
 var predictionTooLargeFlag = false;
 
+var stateObj = { };
+history.pushState(stateObj, "Main Page", "#");
+
+window.onpopstate = function(event) {
+  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+};
+
 $(document).ready(function(){
 	var objects = {};
 	var DEFAULT_LOCATION = "diameter";
@@ -338,12 +345,15 @@ $(document).ready(function(){
 	});
 
 
-	$("#selector-list li").click(function() {
+	$("#selector-list li").click(function(event) {
+		event.preventDefault();
+		location.hash+="/"+ $(this).attr("id");
 		$("#selector-list li.active").toggleClass("active");
 		$(this).toggleClass("active");
-    if($("#chooseObjects").is(":hidden")) {
+        if($("#chooseObjects").is(":hidden")) {
 			$("#chooseObjects").trigger("activate");
 		}
+
 	});
 
 	$("#animateObjects").bind("activate", function(event, data) {
@@ -381,6 +391,10 @@ $(document).ready(function(){
 	});
 
 }); //Closes document ready
+
+function setURL(dimension, selector) {
+	location.hash = dimension + "/" + selector;
+}
 
 function scale(dimension, a, b, animationContainer) {
 	console.log("Scaling...");
