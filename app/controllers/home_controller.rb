@@ -9,5 +9,6 @@ class HomeController < ApplicationController
   		  @itemsDict[i+=1] = items
       end
   	end
+    gon.items=@itemsDict
   end
 end

@@ -4,24 +4,14 @@
 // Require.js allows us to configure shortcut alias
 // Their usage will become more apparent futher along in the tutorial.
 
-// require.config({
-//   baseUrl: 'js',
-//   paths: {
-//     jquery: 'vendor/jquery-1.8.2.min',
-//     underscore: 'vendor/underscore.min',
-//     backbone: 'vendor/backbone.min',
-//     text: 'vendor/text.min',
-//     templates: '../templates'
-//   }
-// });
-
 require.config(
   {
     paths: {
       jquery: 'libs/jquery-1.7.2.min',
-      underscore: 'underscore.min',
+      underscore: 'libs/underscore.min',
       backbone: 'libs/backbone-min',
-      text: 'vendor/text.min',
+      bbone: 'backbone',
+      text: 'libs/text.min',
       templates: 'backbone/templates',
       bootstrap: 'libs/bootstrap/bootstrap.min'
     },
@@ -48,9 +38,10 @@ require(
     // Because these scripts are not "modules" they do not pass any values to the definition function below
   ], 
   function(App) {
+    console.log("App loading...");
     // The "app" dependency is passed in as "App"
     // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
     App.initialize();
-    // console.log("App initialized...");
+     console.log("App initialized...");
   }
 );

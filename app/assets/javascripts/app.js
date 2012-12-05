@@ -4,7 +4,7 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'router', // Request router.js
+    'bbone/routers/router', // Request router.js
   ], 
   function($, _, Backbone, Router) {
     var initialize = function() {

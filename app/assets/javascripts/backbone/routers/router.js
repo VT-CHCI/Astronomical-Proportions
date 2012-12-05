@@ -4,12 +4,13 @@ define(
     'jquery',
     'underscore',
     'backbone',
-    'views/home/homeView',
-    // 'views/slider/sliderView',
-    // 'views/beatBars/beatBarsView'
-    'views/nav/navView'
+    'bbone/views/homeView',
+    'bbone/views/leftNavView',
+    'bbone/views/rightNavView',
+    'bbone/views/navView',
+    'bbone/views/footerView'
   ], 
-  function($, _, Backbone, mainHomeView, navView) {//sliderView, beatBarsView) {
+  function($, _, Backbone, mainHomeView, leftNavView, rightNavView, navView, footerView) {
     var AppRouter = Backbone.Router.extend({
       routes: {
         // Default
@@ -17,15 +18,18 @@ define(
       },
       defaultAction: function(actions) {
         // We have no matching route, lets display the home page
+        
+        console.log("This is happening.");
+        console.log(gon.items)
+        leftNavView.render();
         mainHomeView.render();
-        // sliderView.render();
-        // beatBarsView.render();
-        navView.render();
+        rightNavView.render();
+        //navView.render();
+        footerView.render();
       }
     });
 
     var initialize = function() {
-      // console.log("hey here we are");
       var app_router = new AppRouter;
       Backbone.history.start({pushState:true});
     };

@@ -16,7 +16,10 @@ gem 'compass_twitter_bootstrap'
 gem 'compass-rails'
 gem 'font-awesome-rails'
 
-gem "rails-backbone"
+gem 'rails-backbone'
+gem 'requirejs-rails'
+gem 'ejs'
+gem 'gon'
 
 
 # Gems used only for assets and not required
