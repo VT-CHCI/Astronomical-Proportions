@@ -5,7 +5,7 @@
   <%= f.text_field :email %></div>
 <br /><br />
   <div><%= f.label "First Name" %><br />
-  <%= f.password_field :password %></div>
+  <%= f.text_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me, :checked => true %> <%= f.label :remember_me %></div>
