@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_filter :authenticate_person!, :except => [:show, :index]
+
+  helper ItemsHelper
   
   # GET /items
   # GET /items.json

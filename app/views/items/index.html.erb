@@ -1,10 +1,11 @@
 <h1>Listing items</h1>
-<table>
+<table class="itemTable">
   <tr>
     <th>Image</th>
     <th>Article</th>
     <th>Name</th>
     <th>Diameter</th>
+    <th>Surface Area</th>
     <th>Length</th>
     <th>Width</th>
     <th>Height</th>
@@ -19,12 +20,14 @@
     <td><img src="<%= item.filename %>" width="50"/></td>
     <td><%= item.article %></td>
     <td><%= link_to item.name, item %></td>
-    <td><%= item.diameter %></td>
-    <td><%= item.length %></td>
-    <td><%= item.width %></td>
-    <td><%= item.height %></td>
-    <td><%= item.area %></td>
-    <td><%= item.volume %></td>
+    <td><%= printValueAsSciNotation(item.diameter) %></td>
+    <td><%= printValueAsSciNotation(item.surface_area) %></td>
+    <td><%= printValueAsSciNotation(item.length) %></td>
+    <td><%= printValueAsSciNotation(item.width) %></td>
+    <td><%= printValueAsSciNotation(item.height) %></td>
+    <td><%= printValueAsSciNotation(item.area) %></td>
+    <td><%= printValueAsSciNotation(item.volume) %></td>
+
     <% if current_person == item.person %>
       <td><%= link_to 'Edit', edit_item_path(item) %></td>
       <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
