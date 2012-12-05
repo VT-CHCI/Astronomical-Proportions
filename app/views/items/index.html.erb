@@ -11,8 +11,7 @@
     <th>Height</th>
     <th>Area</th>
     <th>Volume</th>
-    <th></th>
-    <th></th>
+    <th>Flagged Count</th>
   </tr>
 
 <% @items.each do |item| %>
@@ -20,13 +19,14 @@
     <td><img src="<%= item.filename %>" width="50"/></td>
     <td><%= item.article %></td>
     <td><%= link_to item.name, item %></td>
-    <td><%= printValueAsSciNotation(item.diameter) %></td>
-    <td><%= printValueAsSciNotation(item.surface_area) %></td>
-    <td><%= printValueAsSciNotation(item.length) %></td>
-    <td><%= printValueAsSciNotation(item.width) %></td>
-    <td><%= printValueAsSciNotation(item.height) %></td>
-    <td><%= printValueAsSciNotation(item.area) %></td>
-    <td><%= printValueAsSciNotation(item.volume) %></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.diameter) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="diameter" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.surface_area) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="surface-area" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.length) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="length" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.width) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="width" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.height) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="height" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.area) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="area" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><span class="dim-val"><%= printValueAsSciNotation(item.volume) %></span><a href="#" data-item-id="<%= item.id %>" data-dimension="volume" class="flag-it">&nbsp;<i class="icon-flag"></i></a></td>
+    <td><%= item.flags.length %></td>
 
     <% if current_person == item.person %>
       <td><%= link_to 'Edit', edit_item_path(item) %></td>

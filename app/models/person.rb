@@ -1,6 +1,9 @@
 class Person < ActiveRecord::Base
-	has_and_belongs_to_many:permissions
-	has_and_belongs_to_many:roles
+	has_and_belongs_to_many :permissions
+	has_and_belongs_to_many :roles
+  has_many :items
+  has_many :flags
+  has_many :items, :through => :flags, :as => :flagged_items
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :validatable,

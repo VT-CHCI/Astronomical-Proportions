@@ -1,4 +1,6 @@
 ScalingDimensions::Application.routes.draw do
+  resources :flags
+
   resources :applications
 
   get "home/index"

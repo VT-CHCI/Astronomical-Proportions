@@ -82,3 +82,7 @@
 1. Application
 	* name
 	* rails generate scaffold Application name:string
+
+1. Flag
+	* Reason
+	* rails g scaffold Flag reason:text
