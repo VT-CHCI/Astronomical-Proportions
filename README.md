@@ -118,8 +118,6 @@ There are also a few rails dependencies/libraries/plugins which they call "gems"
 #### Where to find things on the back end ####
 There's really not much to the backend of this project. The main thing that's different than standard rails apps is `Astronomical-Proportions/app/controllers/interaction_logs_controller.rb`. This file is what accepts HTTP **POST** requests and logs the parameters to the table in the database. We overloaded the service to also store data for [Critisearch](https://github.com/VT-CHCI/CritiSearch/) and [Sound of Fractions](https://github.com/VT-CHCI/MusicFractions).
 
-#### Database Structure ####
-
 ### Welcome to Rails ###
 *This last section is automatically generated for new Rails applications, I left it here in case it helps a developer later (probably one who's less familiar with Rails)*
 
