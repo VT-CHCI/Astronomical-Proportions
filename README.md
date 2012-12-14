@@ -106,7 +106,7 @@ There are also a few rails dependencies/libraries/plugins which they call "gems"
 
 ##### Main Layout and Styling #####
 `Astronomical-Proportions/app/views/layouts/application.html.erb`
-* This is where most of the HTML for this web applicaiton can be found.
+* This is where most of the HTML for this web application can be found.
 
 `Astronomical-Proportions/app/assets/stylesheets/screen.css`
 * This is where most of the styling is written.
