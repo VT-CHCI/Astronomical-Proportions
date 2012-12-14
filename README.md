@@ -1,6 +1,12 @@
 # Astronomical Proportions #
 Can we help middle schoolers to understand scale (as in relative scale of planets or their distances from each other, like in Science class)?
 
+## Description ##
+This application helps students understand and visualize the relationship between the scale of different objects.
+
+### Features ###
+The application has three different modes, compare mode, analogy mode, and prediction mode. 
+
 ## User Guide ##
 
 
