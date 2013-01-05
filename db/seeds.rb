@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Application.create([{name: "Astronomical Proportions"}, {name: "CritiSearch"}])
+Application.create([{name: "Astronomical Proportions"}, {name: "CritiSearch"}, {name: "The Sound of Fractions"}])
 
 LogType.create([{id: 1, name: "Begin Interaction"}, {id: 2, name: "Selection"}, {id: 3, name: "Action"}])
 
